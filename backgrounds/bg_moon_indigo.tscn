@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://vluum6osd6yn"]
+
+[ext_resource type="PackedScene" uid="uid://uwm62ooy0apb" path="res://backgrounds/templates/bg_parallax_template.tscn" id="1_s37b6"]
+[ext_resource type="Texture2D" uid="uid://cbvxcu2fumno3" path="res://assets/backgrounds/bg_moon_indigo/bg_moon_indigo_back.png" id="2_8627v"]
+[ext_resource type="Texture2D" uid="uid://cqbm7ut55iyro" path="res://assets/backgrounds/bg_moon_indigo/bg_moon_indigo_slow.png" id="3_dbvje"]
+
+[node name="BgParallaxTemplate" instance=ExtResource("1_s37b6")]
+
+[node name="BackgroundTexture" parent="Background" index="0"]
+texture = ExtResource("2_8627v")
+
+[node name="SlowLayerTexture" parent="SlowLayer" index="0"]
+modulate = Color(1, 1, 1, 0.639216)
+self_modulate = Color(1, 1, 1, 0.482353)
+texture = ExtResource("3_dbvje")
+
+[node name="FastLayerTexture" parent="FastLayer" index="0"]
+modulate = Color(1, 1, 1, 0.278431)

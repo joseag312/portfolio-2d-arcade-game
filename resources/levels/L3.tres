@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="LevelDataResource" load_steps=7 format=3 uid="uid://bgs1dgwarfkap"]
+
+[ext_resource type="Texture2D" uid="uid://b2byj4y33ef6d" path="res://assets/enemy/enemy_human_aimer.png" id="1_ko8un"]
+[ext_resource type="Texture2D" uid="uid://cm3sx2vtm67v4" path="res://assets/enemy/enemy_human_basic.png" id="1_rcowh"]
+[ext_resource type="Texture2D" uid="uid://mabeww6pjhiy" path="res://assets/enemy/enemy_human_kamikaze.png" id="2_kpbnn"]
+[ext_resource type="Texture2D" uid="uid://gmvy5goxi764" path="res://assets/powerups/missile.png" id="3_rcowh"]
+[ext_resource type="Script" uid="uid://b03ol7t5nlv8i" path="res://menus/menu_levels/LevelDataResource.cs" id="4_5srl0"]
+[ext_resource type="Texture2D" uid="uid://bcrx42ft4uiq5" path="res://assets/powerups/teleport.png" id="5_rcowh"]
+
+[resource]
+script = ExtResource("4_5srl0")
+Key = "L3"
+DisplayName = "Pain"
+ScenePath = "res://levels/level_003/level_003.tscn"
+EnemySprites = [ExtResource("1_rcowh"), ExtResource("1_ko8un"), ExtResource("2_kpbnn")]
+RecommendedPowerups = [ExtResource("3_rcowh"), ExtResource("5_rcowh")]
+metadata/_custom_type_script = "uid://b03ol7t5nlv8i"

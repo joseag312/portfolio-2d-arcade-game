@@ -1,0 +1,223 @@
+[gd_scene load_steps=10 format=3 uid="uid://d1qwtox2syayg"]
+
+[ext_resource type="Script" uid="uid://c02e8tavf6au2" path="res://hud/hud_dialog_system/HUDDialogSystem.cs" id="1_pnina"]
+[ext_resource type="Resource" uid="uid://btyll18mv1tyi" path="res://resources/images/portrait_library.tres" id="2_01eb2"]
+[ext_resource type="Texture2D" uid="uid://lf5b4qs4rinl" path="res://assets/gui/gui_container_basic_square.png" id="2_hb8th"]
+[ext_resource type="Texture2D" uid="uid://dgn6bedgr7arl" path="res://assets/gui/gui_cat_paw_white.png" id="2_sqtwe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hb8th"]
+bg_color = Color(0.117647, 0.117647, 0.117647, 0.784314)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_hb8th"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_01eb2"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_wylqx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_01eb2"]
+bg_color = Color(0.117647, 0.117647, 0.117647, 0.784314)
+
+[node name="HUDDialogSystem" type="CanvasLayer" node_paths=PackedStringArray("InputBlocker", "DialogBox", "DialogPortrait", "DialogName", "DialogText", "NextButton", "NextButtonContainer", "PopUpBox", "PopUpPortrait", "PopUpText", "PromptButtonBox", "SureButton", "Option1Button", "Option2Button")]
+script = ExtResource("1_pnina")
+PortraitLibrary = ExtResource("2_01eb2")
+InputBlocker = NodePath("InputBlocker")
+DialogBox = NodePath("DialogBox")
+DialogPortrait = NodePath("DialogBox/DialogPanel/DialogMargin/DialogHBox/PortraitContainer/PortraitFrameContainer/PotraitMargin/DialogPortraitImage")
+DialogName = NodePath("DialogBox/DialogPanel/DialogMargin/DialogHBox/TextContainer/DialogName")
+DialogText = NodePath("DialogBox/DialogPanel/DialogMargin/DialogHBox/TextContainer/DialogMessage")
+NextButton = NodePath("DialogBox/DialogPanel/DialogMargin/DialogHBox/ButtonContainer/DialogNextButton")
+NextButtonContainer = NodePath("DialogBox/DialogPanel/DialogMargin/DialogHBox/ButtonContainer")
+PopUpBox = NodePath("PopUpBox")
+PopUpPortrait = NodePath("PopUpBox/PopUpPanel/PopUpMargin/PopUpHBox/PortraitContainer/PopUpPortraitImage")
+PopUpText = NodePath("PopUpBox/PopUpPanel/PopUpMargin/PopUpHBox/PopUpMessage")
+PromptButtonBox = NodePath("ButtonBox")
+SureButton = NodePath("ButtonBox/PromptButtonContainer/SureButton")
+Option1Button = NodePath("ButtonBox/PromptButtonContainer/Option1Button")
+Option2Button = NodePath("ButtonBox/PromptButtonContainer/Option2Button")
+
+[node name="InputBlocker" type="Control" parent="."]
+visible = false
+z_index = 4096
+z_as_relative = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_force_pass_scroll_events = false
+
+[node name="DialogBox" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = -200.0
+offset_right = 40.0
+offset_bottom = -200.0
+grow_vertical = 0
+
+[node name="DialogPanel" type="PanelContainer" parent="DialogBox"]
+layout_mode = 0
+offset_right = 632.0
+offset_bottom = 165.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hb8th")
+
+[node name="DialogMargin" type="MarginContainer" parent="DialogBox/DialogPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="DialogHBox" type="HBoxContainer" parent="DialogBox/DialogPanel/DialogMargin"]
+layout_mode = 2
+
+[node name="PortraitContainer" type="CenterContainer" parent="DialogBox/DialogPanel/DialogMargin/DialogHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="PortraitFrameContainer" type="TextureRect" parent="DialogBox/DialogPanel/DialogMargin/DialogHBox/PortraitContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture = ExtResource("2_hb8th")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="PotraitMargin" type="MarginContainer" parent="DialogBox/DialogPanel/DialogMargin/DialogHBox/PortraitContainer/PortraitFrameContainer"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="DialogPortraitImage" type="AnimatedSprite2D" parent="DialogBox/DialogPanel/DialogMargin/DialogHBox/PortraitContainer/PortraitFrameContainer/PotraitMargin"]
+position = Vector2(64, 64)
+
+[node name="spacer" type="Control" parent="DialogBox/DialogPanel/DialogMargin/DialogHBox"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextContainer" type="VBoxContainer" parent="DialogBox/DialogPanel/DialogMargin/DialogHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DialogName" type="Label" parent="DialogBox/DialogPanel/DialogMargin/DialogHBox/TextContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+text = "Name"
+
+[node name="DialogMessage" type="Label" parent="DialogBox/DialogPanel/DialogMargin/DialogHBox/TextContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+text = "Message really long and descriptive message spanning across multiple lines here."
+autowrap_mode = 2
+
+[node name="ButtonContainer" type="CenterContainer" parent="DialogBox/DialogPanel/DialogMargin/DialogHBox"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DialogNextButton" type="Button" parent="DialogBox/DialogPanel/DialogMargin/DialogHBox/ButtonContainer"]
+layout_mode = 2
+icon = ExtResource("2_sqtwe")
+
+[node name="ButtonBox" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -223.0
+offset_right = 223.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PromptButtonContainer" type="VBoxContainer" parent="ButtonBox"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -223.0
+offset_top = -165.5
+offset_right = 223.0
+offset_bottom = 263.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="SureButton" type="Button" parent="ButtonBox/PromptButtonContainer"]
+layout_mode = 2
+text = "Sure"
+icon = SubResource("PlaceholderTexture2D_hb8th")
+
+[node name="Option1Button" type="Button" parent="ButtonBox/PromptButtonContainer"]
+layout_mode = 2
+text = "Papa?"
+icon = SubResource("PlaceholderTexture2D_01eb2")
+
+[node name="Option2Button" type="Button" parent="ButtonBox/PromptButtonContainer"]
+layout_mode = 2
+text = "Orale wei"
+icon = SubResource("PlaceholderTexture2D_wylqx")
+
+[node name="spacer" type="Control" parent="ButtonBox/PromptButtonContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+
+[node name="PopUpBox" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_top = 165.0
+offset_right = 40.0
+offset_bottom = 205.0
+
+[node name="PopUpPanel" type="PanelContainer" parent="PopUpBox"]
+layout_mode = 0
+offset_right = 487.0
+offset_bottom = 64.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_01eb2")
+
+[node name="PopUpMargin" type="MarginContainer" parent="PopUpBox/PopUpPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="PopUpHBox" type="HBoxContainer" parent="PopUpBox/PopUpPanel/PopUpMargin"]
+layout_mode = 2
+
+[node name="spacer" type="Control" parent="PopUpBox/PopUpPanel/PopUpMargin/PopUpHBox"]
+custom_minimum_size = Vector2(8, 0)
+layout_mode = 2
+
+[node name="PortraitContainer" type="CenterContainer" parent="PopUpBox/PopUpPanel/PopUpMargin/PopUpHBox"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="PopUpPortraitImage" type="AnimatedSprite2D" parent="PopUpBox/PopUpPanel/PopUpMargin/PopUpHBox/PortraitContainer"]
+position = Vector2(24, 24)
+
+[node name="spacer2" type="Control" parent="PopUpBox/PopUpPanel/PopUpMargin/PopUpHBox"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="PopUpMessage" type="Label" parent="PopUpBox/PopUpPanel/PopUpMargin/PopUpHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 18
+text = "PopUpText"

@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=3 uid="uid://bj7260qvjfsfu"]
+
+[ext_resource type="Texture2D" uid="uid://kqgvvgc52iof" path="res://assets/player_projectiles/pp_laser_small.png" id="1_34jry"]
+[ext_resource type="Script" uid="uid://bngbbdfy7uu7s" path="res://components/MoveComponent.cs" id="2_ysowv"]
+[ext_resource type="Script" uid="uid://c64tqnyvh68h6" path="res://components/WeaponSpawnComponent.cs" id="3_koscm"]
+[ext_resource type="Script" uid="uid://dnq7vpxprxfd4" path="res://components/WeaponDataLoaderComponent.cs" id="4_wmx2p"]
+[ext_resource type="Script" uid="uid://enpb5o35rrvx" path="res://components/FlashComponent.cs" id="5_dvscm"]
+[ext_resource type="Script" uid="uid://bppah0v3qiu6u" path="res://components/ScaleComponent.cs" id="7_op6p4"]
+[ext_resource type="Script" uid="uid://c0p7rysr544jk" path="res://components/DespawnOnExitComponent.cs" id="7_yds0b"]
+[ext_resource type="Script" uid="uid://c4o8660pjq6yc" path="res://components/HitboxComponent.cs" id="8_ve46k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nmknm"]
+size = Vector2(4, 8)
+
+[node name="PPBasicBlue" type="Node2D"]
+scale = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_34jry")
+
+[node name="HitboxComponent" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("8_ve46k")
+Damage = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_nmknm")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(2.86102e-07, 1)
+scale = Vector2(0.2, 0.4)
+
+[node name="WeaponSpawnComponent" type="Node" parent="." node_paths=PackedStringArray("_scaleComponent", "_flashComponent", "_hitboxComponent")]
+script = ExtResource("3_koscm")
+_scaleComponent = NodePath("../ScaleComponent")
+_flashComponent = NodePath("../FlashComponent")
+_hitboxComponent = NodePath("../HitboxComponent")
+
+[node name="WeaponDataLoaderComponent" type="Node" parent="." node_paths=PackedStringArray("HitboxComponent", "MoveComponent")]
+script = ExtResource("4_wmx2p")
+WeaponKey = "PPBasicBlue"
+HitboxComponent = NodePath("../HitboxComponent")
+MoveComponent = NodePath("../MoveComponent")
+
+[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("Actor")]
+script = ExtResource("2_ysowv")
+Actor = NodePath("..")
+Velocity = Vector2(0, -700)
+
+[node name="FlashComponent" type="Node" parent="." node_paths=PackedStringArray("_sprite")]
+script = ExtResource("5_dvscm")
+_sprite = NodePath("../Sprite2D")
+
+[node name="ScaleComponent" type="Node" parent="." node_paths=PackedStringArray("Sprite")]
+script = ExtResource("7_op6p4")
+Sprite = NodePath("..")
+ScaleAmount = Vector2(2, 2)
+
+[node name="DespawnOnExitComponent" type="Node" parent="." node_paths=PackedStringArray("_visibleNotifier")]
+script = ExtResource("7_yds0b")
+_visibleNotifier = NodePath("../VisibleOnScreenNotifier2D")

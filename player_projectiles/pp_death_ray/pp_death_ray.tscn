@@ -1,0 +1,149 @@
+[gd_scene load_steps=31 format=3 uid="uid://ciaxhrwwoc0o6"]
+
+[ext_resource type="Script" uid="uid://11h8kqc8ssxa" path="res://player_projectiles/pp_death_ray/PPDeathRay.cs" id="1_msuij"]
+[ext_resource type="Texture2D" uid="uid://b830xp841yx21" path="res://assets/player_projectiles/pp_death_ray/pp_death_ray_01.png" id="1_wdqga"]
+[ext_resource type="Texture2D" uid="uid://dnxgu1t5k1ecu" path="res://assets/player_projectiles/pp_death_ray/pp_death_ray_02.png" id="2_y3pjo"]
+[ext_resource type="Texture2D" uid="uid://bwrcb6xox7cb" path="res://assets/player_projectiles/pp_death_ray/pp_death_ray_03.png" id="3_gsgrp"]
+[ext_resource type="Texture2D" uid="uid://b3qccjin16y0e" path="res://assets/player_projectiles/pp_death_ray/pp_death_ray_04.png" id="4_msuij"]
+[ext_resource type="Texture2D" uid="uid://clwdutpumyex1" path="res://assets/player_projectiles/pp_death_ray/pp_death_ray_05.png" id="5_twvng"]
+[ext_resource type="Texture2D" uid="uid://dxuwnlubc0ywh" path="res://assets/player_projectiles/pp_death_ray/pp_death_ray_06.png" id="6_t2f4r"]
+[ext_resource type="Texture2D" uid="uid://dkp8xs1j0pmom" path="res://assets/player_projectiles/pp_death_ray/pp_death_ray_07.png" id="7_ip261"]
+[ext_resource type="Texture2D" uid="uid://cjc1spsm05m3a" path="res://assets/player_projectiles/pp_death_ray/pp_death_ray_08.png" id="8_f3onk"]
+[ext_resource type="Texture2D" uid="uid://ciwh27yuvvwic" path="res://assets/player_projectiles/pp_death_ray/pp_death_ray_09.png" id="9_vi57x"]
+[ext_resource type="Texture2D" uid="uid://dn1wybcorn56m" path="res://assets/player_projectiles/pp_death_ray/pp_death_ray_10.png" id="10_x2t67"]
+[ext_resource type="Texture2D" uid="uid://cca24hwj6emx1" path="res://assets/player_projectiles/pp_death_ray/pp_death_ray_11.png" id="11_8a5fl"]
+[ext_resource type="Texture2D" uid="uid://b66cksptw2mia" path="res://assets/player_projectiles/pp_death_ray/pp_death_ray_12.png" id="12_14n1x"]
+[ext_resource type="Texture2D" uid="uid://cdtjvcs63sjf1" path="res://assets/player_projectiles/pp_death_ray/pp_death_ray_13.png" id="13_ejsxp"]
+[ext_resource type="Texture2D" uid="uid://dhjg2mex465bc" path="res://assets/player_projectiles/pp_death_ray/pp_death_ray_14.png" id="14_m5uoo"]
+[ext_resource type="Texture2D" uid="uid://c1s0tjgaiuofh" path="res://assets/player_projectiles/pp_death_ray/pp_death_ray_15.png" id="15_8c2bk"]
+[ext_resource type="Texture2D" uid="uid://bujwhmtjyv7d0" path="res://assets/player_projectiles/pp_death_ray/pp_death_ray_16.png" id="16_xsjdf"]
+[ext_resource type="Texture2D" uid="uid://c7okbwtww8baf" path="res://assets/player_projectiles/pp_death_ray/pp_death_ray_17.png" id="17_ih6mo"]
+[ext_resource type="Texture2D" uid="uid://b30fvq42fr6rf" path="res://assets/player_projectiles/pp_death_ray/pp_death_ray_18.png" id="18_wbc8l"]
+[ext_resource type="Texture2D" uid="uid://c5vst122rwgs0" path="res://assets/player_projectiles/pp_death_ray/pp_death_ray_19.png" id="19_ygsrj"]
+[ext_resource type="Texture2D" uid="uid://c12ikittqqh0v" path="res://assets/player_projectiles/pp_death_ray/pp_death_ray_20.png" id="20_o714c"]
+[ext_resource type="Texture2D" uid="uid://bqsfcl6heo8ml" path="res://assets/player_projectiles/pp_death_ray/pp_death_ray_21.png" id="21_qblhc"]
+[ext_resource type="Texture2D" uid="uid://b1c15qqpxfa6f" path="res://assets/player_projectiles/pp_death_ray/pp_death_ray_22.png" id="22_dpaaq"]
+[ext_resource type="Texture2D" uid="uid://cma0milemvhob" path="res://assets/player_projectiles/pp_death_ray/pp_death_ray_23.png" id="23_dddwu"]
+[ext_resource type="Texture2D" uid="uid://cebxc552kjni4" path="res://assets/player_projectiles/pp_death_ray/pp_death_ray_24.png" id="24_g6kwk"]
+[ext_resource type="Script" uid="uid://c4o8660pjq6yc" path="res://components/HitboxComponent.cs" id="25_y3pjo"]
+[ext_resource type="Script" uid="uid://dnq7vpxprxfd4" path="res://components/WeaponDataLoaderComponent.cs" id="26_gsgrp"]
+[ext_resource type="Script" uid="uid://dqdcsaeyk7aut" path="res://components/SFXOnSpawnComponent.cs" id="28_twvng"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wqyjh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wdqga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_y3pjo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gsgrp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_msuij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_twvng")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_t2f4r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ip261")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_f3onk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_vi57x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_x2t67")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_8a5fl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_14n1x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ejsxp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_m5uoo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_8c2bk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_xsjdf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ih6mo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_wbc8l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ygsrj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_o714c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_qblhc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_dpaaq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_dddwu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_g6kwk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gsgrp"]
+size = Vector2(4, 906)
+
+[node name="PPDeathRay" type="Node2D" node_paths=PackedStringArray("LifetimeTimer")]
+script = ExtResource("1_msuij")
+LifetimeTimer = NodePath("Timer")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.15, -460)
+rotation = 3.14159
+scale = Vector2(0.4, 15)
+sprite_frames = SubResource("SpriteFrames_wqyjh")
+autoplay = "default"
+frame_progress = 0.169255
+
+[node name="HitboxComponent" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("25_y3pjo")
+metadata/_custom_type_script = "uid://c4o8660pjq6yc"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+position = Vector2(0, -453)
+shape = SubResource("RectangleShape2D_gsgrp")
+
+[node name="WeaponDataLoaderComponent" type="Node" parent="." node_paths=PackedStringArray("HitboxComponent")]
+script = ExtResource("26_gsgrp")
+WeaponKey = "PPDeathRay"
+HitboxComponent = NodePath("../HitboxComponent")
+metadata/_custom_type_script = "uid://dnq7vpxprxfd4"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+
+[node name="SFXOnSpawnComponent" type="Node" parent="."]
+script = ExtResource("28_twvng")
+SoundKey = "ray"
+metadata/_custom_type_script = "uid://dqdcsaeyk7aut"

@@ -1,0 +1,10 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bukg7oybj34mn"]
+
+[ext_resource type="FontFile" uid="uid://yhgqknt8i0fl" path="res://assets/fonts/syne_mono_regular.ttf" id="1_80vr4"]
+
+[resource]
+font = ExtResource("1_80vr4")
+font_size = 64
+font_color = Color(1, 0, 0, 1)
+outline_size = 24
+outline_color = Color(0, 0, 0, 1)

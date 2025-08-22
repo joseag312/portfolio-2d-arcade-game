@@ -1,0 +1,37 @@
+****************************************************************************************************************
+
+✅ Summary of Today
+
+🎶 Added sound effects for polish, changed AutoSFX to allow multiple audio streams
+🪙 Economy balancing
+🎵 In-game soundtrack changes
+
+****************************************************************************************************************
+
+🚀 Tomorrow’s Jump Point
+
+****************************************************************************************************************
+
+✅ Portfolio Version Backlog
+
+****************************************************************************************************************
+
+🐜 Bugs
+
+****************************************************************************************************************
+
+🌀 Showcase Backlog
+
+🧬 Weapon Type System – Elemental/tech types, rock-paper-scissors-style behavior.
+🏆 Full Progression System – Unlocks, upgrades, meta-level persistence.
+🐾 Full Oiia Narrative & Final Battle – Thematic arc and resolution.
+🧠 Advanced AI Patterns – Smarter enemies with behaviors.
+🎨 Skin System – Cosmetic unlocks from IAPs or progress.
+🔮 Karma & Narrative Impact – Use of AutoGameStats to change story/dialog.
+📖 Lore System – Optional story content, maybe codex-style.
+🕹️ Touch GUI Finalization – Post-keyboard support polish.
+📦 Import/Export Save System – For continuity/testing.
+🧩 Randomness in levels.
+🧹 Refactor – Code Cleanup
+
+****************************************************************************************************************

@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1wlruof01x4y"]
+
+[ext_resource type="Script" uid="uid://c4iesx17v7vif" path="res://components/MenuLoadComponent.cs" id="1_3t7hf"]
+[ext_resource type="Script" uid="uid://wmnc4bqffk16" path="res://menus/game_flow/FlowLevelClear.cs" id="1_727oe"]
+[ext_resource type="Script" uid="uid://bbg1n3i80miej" path="res://components/MenuFadeComponent.cs" id="2_727oe"]
+[ext_resource type="LabelSettings" uid="uid://c3c5wufuc0x8h" path="res://resources/fonts/font_syne_teal_128.tres" id="4_hbebv"]
+
+[node name="FlowLevelClear" type="CanvasLayer" node_paths=PackedStringArray("MessageLabel", "MenuFadeComponent")]
+script = ExtResource("1_727oe")
+MessageLabel = NodePath("MainContainer/MainVBox/MessageLabel")
+MenuFadeComponent = NodePath("MenuFadeComponent")
+
+[node name="MenuLoadComponent" type="Node" parent="." node_paths=PackedStringArray("CanvasContainer")]
+script = ExtResource("1_3t7hf")
+CanvasContainer = NodePath("../MainContainer")
+FadeDuration = 1.0
+metadata/_custom_type_script = "uid://c4iesx17v7vif"
+
+[node name="MenuFadeComponent" type="Node" parent="." node_paths=PackedStringArray("CanvasContainer")]
+script = ExtResource("2_727oe")
+CanvasContainer = NodePath("../MainContainer")
+FadeDuration = 1.0
+metadata/_custom_type_script = "uid://bbg1n3i80miej"
+
+[node name="MainContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainVBox" type="VBoxContainer" parent="MainContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="LevelClearLabel" type="Label" parent="MainContainer/MainVBox"]
+layout_mode = 2
+text = " Clear!"
+label_settings = ExtResource("4_hbebv")
+
+[node name="MessageLabel" type="Label" parent="MainContainer/MainVBox"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 36
+text = "Good Work!"
+horizontal_alignment = 1
+
+[node name="spacer" type="Control" parent="MainContainer/MainVBox"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2

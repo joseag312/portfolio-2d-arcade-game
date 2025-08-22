@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://hrstvxl66b78"]
+
+[ext_resource type="Texture2D" uid="uid://cr8htoj1sqxdh" path="res://assets/cats/cat_ethereal/default.png" id="1_ix8lw"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ix8lw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

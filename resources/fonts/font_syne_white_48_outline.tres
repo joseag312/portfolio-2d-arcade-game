@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://cq7v7yowl8sho"]
+
+[ext_resource type="FontFile" uid="uid://yhgqknt8i0fl" path="res://assets/fonts/syne_mono_regular.ttf" id="1_os252"]
+
+[resource]
+font = ExtResource("1_os252")
+font_size = 48
+outline_size = 24
+outline_color = Color(0, 0, 0, 1)

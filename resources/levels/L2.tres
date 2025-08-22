@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="LevelDataResource" load_steps=6 format=3 uid="uid://biggnxeer8422"]
+
+[ext_resource type="Texture2D" uid="uid://baaje4crapiwc" path="res://assets/enemy/enemy_human_bulldozer.png" id="1_mhd4p"]
+[ext_resource type="Texture2D" uid="uid://gmvy5goxi764" path="res://assets/powerups/missile.png" id="2_mpxpg"]
+[ext_resource type="Texture2D" uid="uid://mabeww6pjhiy" path="res://assets/enemy/enemy_human_kamikaze.png" id="2_oxurg"]
+[ext_resource type="Script" uid="uid://b03ol7t5nlv8i" path="res://menus/menu_levels/LevelDataResource.cs" id="3_o18bt"]
+[ext_resource type="Texture2D" uid="uid://byqai6oacjsj3" path="res://assets/powerups/shield.png" id="4_o18bt"]
+
+[resource]
+script = ExtResource("3_o18bt")
+Key = "L2"
+DisplayName = "Insight"
+ScenePath = "res://levels/level_002/level_002.tscn"
+EnemySprites = [ExtResource("1_mhd4p"), ExtResource("2_oxurg"), null]
+RecommendedPowerups = [ExtResource("2_mpxpg"), ExtResource("4_o18bt")]
+metadata/_custom_type_script = "uid://b03ol7t5nlv8i"

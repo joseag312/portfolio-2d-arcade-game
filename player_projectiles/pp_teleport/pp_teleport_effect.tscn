@@ -1,0 +1,103 @@
+[gd_scene load_steps=16 format=3 uid="uid://cdqpyc6bmgdyb"]
+
+[ext_resource type="Texture2D" uid="uid://cp0jvsyf88llk" path="res://assets/effects/explosions_4.png" id="1_4cvqg"]
+[ext_resource type="Script" uid="uid://bcmy8xsjbnpi3" path="res://components/OneTimeAnimatedEffect.cs" id="1_j5wec"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4cvqg"]
+atlas = ExtResource("1_4cvqg")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gxjr"]
+atlas = ExtResource("1_4cvqg")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vcxc"]
+atlas = ExtResource("1_4cvqg")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhtpc"]
+atlas = ExtResource("1_4cvqg")
+region = Rect2(192, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6q2ap"]
+atlas = ExtResource("1_4cvqg")
+region = Rect2(256, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_egivw"]
+atlas = ExtResource("1_4cvqg")
+region = Rect2(320, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bo4vg"]
+atlas = ExtResource("1_4cvqg")
+region = Rect2(384, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6p2ui"]
+atlas = ExtResource("1_4cvqg")
+region = Rect2(448, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hilf6"]
+atlas = ExtResource("1_4cvqg")
+region = Rect2(512, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x05iu"]
+atlas = ExtResource("1_4cvqg")
+region = Rect2(576, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hnsp"]
+atlas = ExtResource("1_4cvqg")
+region = Rect2(640, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_okub3"]
+atlas = ExtResource("1_4cvqg")
+region = Rect2(704, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4gxjr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4cvqg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4gxjr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0vcxc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nhtpc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6q2ap")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_egivw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bo4vg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6p2ui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hilf6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x05iu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7hnsp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_okub3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[node name="PPTeleportEffect" type="AnimatedSprite2D"]
+scale = Vector2(1.35, 1.35)
+sprite_frames = SubResource("SpriteFrames_4gxjr")
+autoplay = "default"
+script = ExtResource("1_j5wec")
+metadata/_custom_type_script = "uid://bcmy8xsjbnpi3"

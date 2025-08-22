@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://du8cbvmb8sh5s"]
+
+[ext_resource type="Script" uid="uid://bh80d641mcyal" path="res://player_projectiles/pp_teleport/PPTeleport.cs" id="1_tf03a"]
+
+[node name="PPTeleport" type="Node2D"]
+script = ExtResource("1_tf03a")

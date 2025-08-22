@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhki8ueevhs0q"]
+
+[ext_resource type="PackedScene" uid="uid://uwm62ooy0apb" path="res://backgrounds/templates/bg_parallax_template.tscn" id="1_7b3bo"]
+[ext_resource type="Texture2D" uid="uid://dd0j7jwb8yrs8" path="res://assets/backgrounds/bg_deep_space/bg_deep_space_back.png" id="2_7b3bo"]
+[ext_resource type="Texture2D" uid="uid://bmuag8qtox1y7" path="res://assets/backgrounds/bg_deep_space/bg_deep_space_slow.png" id="3_886h6"]
+[ext_resource type="Texture2D" uid="uid://dlpbfh3mhk7oa" path="res://assets/backgrounds/bg_deep_space/bg_deep_space_fast.png" id="4_wbcmv"]
+
+[node name="BgRedPlanet" instance=ExtResource("1_7b3bo")]
+
+[node name="Background" parent="." index="4"]
+modulate = Color(0.439216, 0.45098, 0.505882, 1)
+
+[node name="BackgroundTexture" parent="Background" index="0"]
+texture = ExtResource("2_7b3bo")
+
+[node name="SlowLayerTexture" parent="SlowLayer" index="0"]
+texture = ExtResource("3_886h6")
+
+[node name="FastLayerTexture" parent="FastLayer" index="0"]
+texture = ExtResource("4_wbcmv")

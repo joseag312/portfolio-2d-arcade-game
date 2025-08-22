@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cj5xiieucak4d"]
+
+[ext_resource type="Script" uid="uid://n1o03nxxagxs" path="res://autoload/auto_sfx/AutoSFX.cs" id="1_mxe86"]
+
+[node name="AutoSFX" type="Node" node_paths=PackedStringArray("_sfxPlayer")]
+script = ExtResource("1_mxe86")
+_sfxPlayer = NodePath("AudioStreamPlayer")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

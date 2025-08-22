@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://xemhthflry0"]
+
+[ext_resource type="PackedScene" uid="uid://bj7260qvjfsfu" path="res://player_projectiles/pp_basic_blue/pp_basic_blue.tscn" id="1_a27au"]
+[ext_resource type="Texture2D" uid="uid://drwcveosb0n6c" path="res://assets/player_projectiles/pp_laser_big.png" id="2_2jsrl"]
+[ext_resource type="Script" uid="uid://dqdcsaeyk7aut" path="res://components/SFXOnSpawnComponent.cs" id="3_2jsrl"]
+
+[node name="PPBigBlue" instance=ExtResource("1_a27au")]
+scale = Vector2(3, 3)
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_2jsrl")
+
+[node name="CollisionShape2D" parent="HitboxComponent" index="0"]
+position = Vector2(0, -2.5)
+
+[node name="WeaponDataLoaderComponent" parent="." index="4"]
+WeaponKey = "PPBigBlue"
+
+[node name="MoveComponent" parent="." index="5"]
+Velocity = Vector2(0, -1000)
+
+[node name="ScaleComponent" parent="." index="7"]
+ScaleAmount = Vector2(1.5, 1.5)
+
+[node name="SFXOnSpawnComponent" type="Node" parent="." index="9"]
+script = ExtResource("3_2jsrl")
+SoundKey = "laser"
+metadata/_custom_type_script = "uid://dqdcsaeyk7aut"

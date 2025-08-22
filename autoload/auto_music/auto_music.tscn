@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcyi3dr382l6x"]
+
+[ext_resource type="Script" uid="uid://v23kmalwvwo1" path="res://autoload/auto_music/AutoMusic.cs" id="1_bfqnc"]
+
+[node name="AutoMusic" type="Node" node_paths=PackedStringArray("_musicPlayer")]
+script = ExtResource("1_bfqnc")
+_musicPlayer = NodePath("AudioStreamPlayer")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

@@ -1,0 +1,32 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://cf0cyhbs36w28"]
+
+[ext_resource type="Texture2D" uid="uid://dp7vas0xji8cs" path="res://assets/cats/cat_commander/angry.png" id="1_pvbgg"]
+[ext_resource type="Texture2D" uid="uid://byxwea6o5n4jn" path="res://assets/cats/cat_commander/annoyed.png" id="2_gpcao"]
+[ext_resource type="Texture2D" uid="uid://kjptnxucy76w" path="res://assets/cats/cat_commander/default.png" id="3_d5sxy"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pvbgg")
+}],
+"loop": true,
+"name": &"angry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gpcao")
+}],
+"loop": true,
+"name": &"annoyed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_d5sxy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

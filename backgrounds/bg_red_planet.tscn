@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpbupr3ut45vt"]
+
+[ext_resource type="PackedScene" uid="uid://uwm62ooy0apb" path="res://backgrounds/templates/bg_parallax_template.tscn" id="1_6q1fu"]
+[ext_resource type="Texture2D" uid="uid://5itxcy6cwtq8" path="res://assets/backgrounds/bg_red_planet/bg_red_planet_back.png" id="2_iclon"]
+[ext_resource type="Texture2D" uid="uid://bv2odg2u4hlha" path="res://assets/backgrounds/bg_red_planet/bg_red_planet_slow.png" id="3_44qnl"]
+[ext_resource type="Texture2D" uid="uid://dvrxxviqmcgmi" path="res://assets/backgrounds/bg_red_planet/bg_red_planet_fast.png" id="4_22vuw"]
+
+[node name="BgRedPlanet" instance=ExtResource("1_6q1fu")]
+
+[node name="Background" parent="." index="4"]
+modulate = Color(0.439216, 0.45098, 0.505882, 1)
+
+[node name="BackgroundTexture" parent="Background" index="0"]
+texture = ExtResource("2_iclon")
+
+[node name="SlowLayer" parent="." index="5"]
+modulate = Color(1, 1, 1, 0.384314)
+
+[node name="SlowLayerTexture" parent="SlowLayer" index="0"]
+texture = ExtResource("3_44qnl")
+
+[node name="FastLayer" parent="." index="6"]
+modulate = Color(1, 1, 1, 0.705882)
+
+[node name="FastLayerTexture" parent="FastLayer" index="0"]
+texture = ExtResource("4_22vuw")

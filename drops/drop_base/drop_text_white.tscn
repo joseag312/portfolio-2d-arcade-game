@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdvvkgaw8wgsm"]
+
+[ext_resource type="Script" uid="uid://duxqwb3bfgm7m" path="res://drops/drop_base/DropTextWhite.cs" id="1_4f7v7"]
+
+[node name="DropTextWhite" type="Node2D" node_paths=PackedStringArray("_label")]
+script = ExtResource("1_4f7v7")
+_label = NodePath("Label")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 31.0

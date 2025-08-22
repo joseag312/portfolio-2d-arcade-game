@@ -1,0 +1,190 @@
+[gd_scene load_steps=9 format=3 uid="uid://cicnkg1vggwe7"]
+
+[ext_resource type="Script" uid="uid://ddh7ywkh7xu70" path="res://hud/hud_powers/HUDPowers.cs" id="1_0euhm"]
+[ext_resource type="Texture2D" uid="uid://bdtatqquc5pi0" path="res://assets/gui/gui_button_large.png" id="1_ti362"]
+[ext_resource type="Texture2D" uid="uid://c7bm3th4b5u0b" path="res://assets/gui/gui_button_small.png" id="2_0euhm"]
+[ext_resource type="Texture2D" uid="uid://bcbe46safxhiq" path="res://assets/gui/gui_button_large_overlay.png" id="4_v3s55"]
+[ext_resource type="Texture2D" uid="uid://gmvy5goxi764" path="res://assets/powerups/missile.png" id="4_yspwg"]
+[ext_resource type="Texture2D" uid="uid://byqai6oacjsj3" path="res://assets/powerups/shield.png" id="5_3oksk"]
+[ext_resource type="Texture2D" uid="uid://bcrx42ft4uiq5" path="res://assets/powerups/teleport.png" id="6_ogxf4"]
+[ext_resource type="Texture2D" uid="uid://xvdw801q1dsc" path="res://assets/powerups/death_ray.png" id="7_v3s55"]
+
+[node name="HUDPowers" type="Control" node_paths=PackedStringArray("BigLaserButton", "BigLaserOverlay", "PowerUp1Container", "PowerUp1Icon", "PowerUp1Overlay", "PowerUp1Amount", "PowerUp2Container", "PowerUp2Icon", "PowerUp2Overlay", "PowerUp2Amount", "PowerUp3Container", "PowerUp3Icon", "PowerUp3Overlay", "PowerUp3Amount", "PowerUp4Container", "PowerUp4Icon", "PowerUp4Overlay", "PowerUp4Amount")]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("1_0euhm")
+BigLaserButton = NodePath("BigPowerUpCenterContainer/BigLaserButtonTexture")
+BigLaserOverlay = NodePath("BigPowerUpCenterContainer/BigLaserButtonOverlay")
+PowerUp1Container = NodePath("SlottedPowerUpHBoxContainer/PowerUpContainer1/PowerUp1ContainerTextureRect")
+PowerUp1Icon = NodePath("SlottedPowerUpHBoxContainer/PowerUpContainer1/PowerUp1IconTextureRect")
+PowerUp1Overlay = NodePath("SlottedPowerUpHBoxContainer/PowerUpContainer1/Cooldown1Overlay")
+PowerUp1Amount = NodePath("SlottedPowerUpHBoxContainer/PowerUpContainer1/Amount1Label")
+PowerUp2Container = NodePath("SlottedPowerUpHBoxContainer/PowerUpContainer2/PowerUp2ContainerTextureRect")
+PowerUp2Icon = NodePath("SlottedPowerUpHBoxContainer/PowerUpContainer2/PowerUp2IconTextureRect")
+PowerUp2Overlay = NodePath("SlottedPowerUpHBoxContainer/PowerUpContainer2/Cooldown2Overlay")
+PowerUp2Amount = NodePath("SlottedPowerUpHBoxContainer/PowerUpContainer2/Amount2Label")
+PowerUp3Container = NodePath("SlottedPowerUpHBoxContainer/PowerUpContainer3/PowerUp3ContainerTextureRect")
+PowerUp3Icon = NodePath("SlottedPowerUpHBoxContainer/PowerUpContainer3/PowerUp3IconTextureRect")
+PowerUp3Overlay = NodePath("SlottedPowerUpHBoxContainer/PowerUpContainer3/Cooldown3Overlay")
+PowerUp3Amount = NodePath("SlottedPowerUpHBoxContainer/PowerUpContainer3/Amount3Label")
+PowerUp4Container = NodePath("SlottedPowerUpHBoxContainer/PowerUpContainer4/PowerUp4ContainerTextureRect")
+PowerUp4Icon = NodePath("SlottedPowerUpHBoxContainer/PowerUpContainer4/PowerUp4IconTextureRect")
+PowerUp4Overlay = NodePath("SlottedPowerUpHBoxContainer/PowerUpContainer4/Cooldown4Overlay")
+PowerUp4Amount = NodePath("SlottedPowerUpHBoxContainer/PowerUpContainer4/Amount4Label")
+
+[node name="BigPowerUpCenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(180, 180)
+layout_mode = 0
+offset_left = -204.0
+offset_top = -207.0
+offset_right = -24.0
+offset_bottom = -27.0
+
+[node name="BigLaserButtonTexture" type="TextureRect" parent="BigPowerUpCenterContainer"]
+custom_minimum_size = Vector2(180, 180)
+layout_mode = 2
+texture = ExtResource("1_ti362")
+
+[node name="BigLaserButtonOverlay" type="TextureRect" parent="BigPowerUpCenterContainer"]
+self_modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(180, 180)
+layout_mode = 2
+texture = ExtResource("4_v3s55")
+
+[node name="SlottedPowerUpHBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -600.0
+offset_top = -97.0
+offset_right = -212.0
+offset_bottom = -17.0
+
+[node name="PowerUpContainer1" type="CenterContainer" parent="SlottedPowerUpHBoxContainer"]
+modulate = Color(1, 1, 1, 0.705882)
+layout_mode = 2
+
+[node name="PowerUp1ContainerTextureRect" type="TextureRect" parent="SlottedPowerUpHBoxContainer/PowerUpContainer1"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = ExtResource("2_0euhm")
+
+[node name="PowerUp1IconTextureRect" type="TextureRect" parent="SlottedPowerUpHBoxContainer/PowerUpContainer1"]
+modulate = Color(0.784314, 0.784314, 0.784314, 0.529412)
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = ExtResource("4_yspwg")
+expand_mode = 1
+
+[node name="Amount1Label" type="Label" parent="SlottedPowerUpHBoxContainer/PowerUpContainer1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "999"
+vertical_alignment = 2
+
+[node name="Cooldown1Overlay" type="TextureRect" parent="SlottedPowerUpHBoxContainer/PowerUpContainer1"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = ExtResource("2_0euhm")
+expand_mode = 1
+
+[node name="m101" type="Control" parent="SlottedPowerUpHBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="PowerUpContainer2" type="CenterContainer" parent="SlottedPowerUpHBoxContainer"]
+modulate = Color(1, 1, 1, 0.705882)
+layout_mode = 2
+
+[node name="PowerUp2ContainerTextureRect" type="TextureRect" parent="SlottedPowerUpHBoxContainer/PowerUpContainer2"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = ExtResource("2_0euhm")
+
+[node name="PowerUp2IconTextureRect" type="TextureRect" parent="SlottedPowerUpHBoxContainer/PowerUpContainer2"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = ExtResource("5_3oksk")
+expand_mode = 1
+
+[node name="Amount2Label" type="Label" parent="SlottedPowerUpHBoxContainer/PowerUpContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "50"
+vertical_alignment = 2
+
+[node name="Cooldown2Overlay" type="TextureRect" parent="SlottedPowerUpHBoxContainer/PowerUpContainer2"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = ExtResource("2_0euhm")
+expand_mode = 1
+
+[node name="m102" type="Control" parent="SlottedPowerUpHBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="PowerUpContainer3" type="CenterContainer" parent="SlottedPowerUpHBoxContainer"]
+modulate = Color(1, 1, 1, 0.705882)
+layout_mode = 2
+
+[node name="PowerUp3ContainerTextureRect" type="TextureRect" parent="SlottedPowerUpHBoxContainer/PowerUpContainer3"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = ExtResource("2_0euhm")
+
+[node name="PowerUp3IconTextureRect" type="TextureRect" parent="SlottedPowerUpHBoxContainer/PowerUpContainer3"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = ExtResource("6_ogxf4")
+expand_mode = 1
+
+[node name="Amount3Label" type="Label" parent="SlottedPowerUpHBoxContainer/PowerUpContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "7"
+vertical_alignment = 2
+
+[node name="Cooldown3Overlay" type="TextureRect" parent="SlottedPowerUpHBoxContainer/PowerUpContainer3"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = ExtResource("2_0euhm")
+expand_mode = 1
+
+[node name="m103" type="Control" parent="SlottedPowerUpHBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="PowerUpContainer4" type="CenterContainer" parent="SlottedPowerUpHBoxContainer"]
+modulate = Color(1, 1, 1, 0.705882)
+layout_mode = 2
+
+[node name="PowerUp4ContainerTextureRect" type="TextureRect" parent="SlottedPowerUpHBoxContainer/PowerUpContainer4"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = ExtResource("2_0euhm")
+
+[node name="PowerUp4IconTextureRect" type="TextureRect" parent="SlottedPowerUpHBoxContainer/PowerUpContainer4"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = ExtResource("7_v3s55")
+expand_mode = 1
+
+[node name="Amount4Label" type="Label" parent="SlottedPowerUpHBoxContainer/PowerUpContainer4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "3"
+vertical_alignment = 2
+
+[node name="Cooldown4Overlay" type="TextureRect" parent="SlottedPowerUpHBoxContainer/PowerUpContainer4"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = ExtResource("2_0euhm")
+expand_mode = 1
+
+[node name="m104" type="Control" parent="SlottedPowerUpHBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2

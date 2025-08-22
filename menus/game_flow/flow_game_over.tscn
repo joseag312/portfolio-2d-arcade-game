@@ -1,0 +1,90 @@
+[gd_scene load_steps=7 format=3 uid="uid://ddievpq0u0ayl"]
+
+[ext_resource type="Script" uid="uid://c8of8ympfe20a" path="res://menus/game_flow/FlowGameOver.cs" id="1_tnwgc"]
+[ext_resource type="Script" uid="uid://c4iesx17v7vif" path="res://components/MenuLoadComponent.cs" id="2_1sgg1"]
+[ext_resource type="LabelSettings" uid="uid://c8lp4gh02mc4f" path="res://resources/fonts/font_syne_purple_128.tres" id="2_7m8l8"]
+[ext_resource type="Script" uid="uid://bbg1n3i80miej" path="res://components/MenuFadeComponent.cs" id="3_74y6c"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_5hgec"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1sgg1"]
+
+[node name="FlowGameOver" type="CanvasLayer" node_paths=PackedStringArray("MessageLabel", "RetryButton", "ExitButton", "MenuFadeComponent")]
+script = ExtResource("1_tnwgc")
+MessageLabel = NodePath("MainContainer/MainVBox/MessageLabel")
+RetryButton = NodePath("MainContainer/MainVBox/ButtonHBox/RetryButton")
+ExitButton = NodePath("MainContainer/MainVBox/ButtonHBox/ExitButton")
+MenuFadeComponent = NodePath("MenuFadeComponent")
+
+[node name="MenuLoadComponent" type="Node" parent="." node_paths=PackedStringArray("CanvasContainer")]
+script = ExtResource("2_1sgg1")
+CanvasContainer = NodePath("../MainContainer")
+FadeDuration = 1.0
+metadata/_custom_type_script = "uid://c4iesx17v7vif"
+
+[node name="MenuFadeComponent" type="Node" parent="." node_paths=PackedStringArray("CanvasContainer")]
+script = ExtResource("3_74y6c")
+CanvasContainer = NodePath("../MainContainer")
+FadeDuration = 1.0
+metadata/_custom_type_script = "uid://bbg1n3i80miej"
+
+[node name="MainContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainVBox" type="VBoxContainer" parent="MainContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="GameOverLabel" type="Label" parent="MainContainer/MainVBox"]
+layout_mode = 2
+text = "Game Over"
+label_settings = ExtResource("2_7m8l8")
+
+[node name="MessageLabel" type="Label" parent="MainContainer/MainVBox"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 36
+text = "Keep Trying!"
+horizontal_alignment = 1
+
+[node name="spacer" type="Control" parent="MainContainer/MainVBox"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="ButtonHBox" type="HBoxContainer" parent="MainContainer/MainVBox"]
+layout_mode = 2
+alignment = 1
+
+[node name="spacer1" type="Control" parent="MainContainer/MainVBox/ButtonHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="RetryButton" type="Button" parent="MainContainer/MainVBox/ButtonHBox"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.0
+text = " Retry "
+icon = SubResource("PlaceholderTexture2D_5hgec")
+
+[node name="spacer2" type="Control" parent="MainContainer/MainVBox/ButtonHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ExitButton" type="Button" parent="MainContainer/MainVBox/ButtonHBox"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.0
+text = " Exit "
+icon = SubResource("PlaceholderTexture2D_1sgg1")
+
+[node name="spacer3" type="Control" parent="MainContainer/MainVBox/ButtonHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0

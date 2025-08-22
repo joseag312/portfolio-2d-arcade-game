@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://t3gj82llt5tu"]
+
+[ext_resource type="PackedScene" uid="uid://d1qwtox2syayg" path="res://hud/hud_dialog_system/hud_dialog_system.tscn" id="1_elt30"]
+[ext_resource type="Script" uid="uid://caa6y6axkb7k0" path="res://hud/hud_main/HUDMain.cs" id="1_qycpi"]
+[ext_resource type="PackedScene" uid="uid://djan3duhgdlxt" path="res://hud/hud_health_bar/hud_health_bar.tscn" id="2_ltk68"]
+[ext_resource type="PackedScene" uid="uid://cjuilh3ky2tbn" path="res://hud/hud_currency/hud_currency.tscn" id="3_ltk68"]
+[ext_resource type="PackedScene" uid="uid://cicnkg1vggwe7" path="res://hud/hud_powers/HUDPowers.tscn" id="5_wbssj"]
+
+[node name="HUDMain" type="CanvasLayer" node_paths=PackedStringArray("Powers", "HealthBar", "Currency", "Dialog")]
+script = ExtResource("1_qycpi")
+Powers = NodePath("HUDPowers")
+HealthBar = NodePath("HUDHealthBar")
+Currency = NodePath("HudCurrency")
+Dialog = NodePath("HUDDialogSystem")
+
+[node name="HUDPowers" parent="." instance=ExtResource("5_wbssj")]
+
+[node name="HUDHealthBar" parent="." instance=ExtResource("2_ltk68")]
+offset_left = 40.0
+offset_top = 36.0
+offset_right = 80.0
+offset_bottom = 76.0
+
+[node name="HudCurrency" parent="." instance=ExtResource("3_ltk68")]
+
+[node name="HUDDialogSystem" parent="." instance=ExtResource("1_elt30")]

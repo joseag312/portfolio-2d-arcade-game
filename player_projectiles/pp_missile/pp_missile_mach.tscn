@@ -1,0 +1,128 @@
+[gd_scene load_steps=15 format=3 uid="uid://dy7t77g3unrro"]
+
+[ext_resource type="Texture2D" uid="uid://bweecr4gacaxa" path="res://assets/player_projectiles/pp_missile_1.png" id="1_7dmc6"]
+[ext_resource type="Texture2D" uid="uid://dyr01utwcmces" path="res://assets/player_projectiles/pp_missile_2.png" id="2_7npst"]
+[ext_resource type="Script" uid="uid://c4o8660pjq6yc" path="res://components/HitboxComponent.cs" id="2_mckg2"]
+[ext_resource type="Texture2D" uid="uid://b151xfs8ogxn6" path="res://assets/player_projectiles/pp_missile_3.png" id="3_0wwjg"]
+[ext_resource type="Script" uid="uid://c64tqnyvh68h6" path="res://components/WeaponSpawnComponent.cs" id="3_qcb3t"]
+[ext_resource type="Script" uid="uid://dnq7vpxprxfd4" path="res://components/WeaponDataLoaderComponent.cs" id="4_64ce4"]
+[ext_resource type="Script" uid="uid://bngbbdfy7uu7s" path="res://components/MoveComponent.cs" id="5_6ktm1"]
+[ext_resource type="Script" uid="uid://15c5bbm4dl76" path="res://components/SpawnerComponent.cs" id="5_jtppx"]
+[ext_resource type="Script" uid="uid://bppah0v3qiu6u" path="res://components/ScaleComponent.cs" id="7_0yb1w"]
+[ext_resource type="Script" uid="uid://c0p7rysr544jk" path="res://components/DespawnOnExitComponent.cs" id="8_ruo5s"]
+[ext_resource type="Script" uid="uid://bmn7mtg77u3ou" path="res://components/EffectOnImpactComponent.cs" id="10_7npst"]
+[ext_resource type="Script" uid="uid://dqdcsaeyk7aut" path="res://components/SFXOnSpawnComponent.cs" id="13_bacxp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w8w1u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7dmc6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7npst")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0wwjg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7npst")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0wwjg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7npst")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0wwjg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7npst")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0wwjg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_7dmc6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_7dmc6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_7dmc6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nmknm"]
+size = Vector2(6, 28)
+
+[node name="PPMissileMach" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.15, 0.15)
+sprite_frames = SubResource("SpriteFrames_w8w1u")
+autoplay = "default"
+frame_progress = 0.583
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, -9)
+
+[node name="HitboxComponent" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("2_mckg2")
+Damage = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_nmknm")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(2.86102e-07, 1)
+scale = Vector2(-0.283738, 1.44618)
+
+[node name="SpawnerComponent" type="Node2D" parent="." node_paths=PackedStringArray("Location")]
+script = ExtResource("5_jtppx")
+Location = NodePath("../Marker2D")
+metadata/_custom_type_script = "uid://15c5bbm4dl76"
+
+[node name="WeaponSpawnComponent" type="Node" parent="." node_paths=PackedStringArray("_scaleComponent", "_hitboxComponent")]
+script = ExtResource("3_qcb3t")
+_scaleComponent = NodePath("../ScaleComponent")
+_hitboxComponent = NodePath("../HitboxComponent")
+
+[node name="WeaponDataLoaderComponent" type="Node" parent="." node_paths=PackedStringArray("HitboxComponent", "MoveComponent")]
+script = ExtResource("4_64ce4")
+WeaponKey = "PPMissileMach"
+HitboxComponent = NodePath("../HitboxComponent")
+MoveComponent = NodePath("../MoveComponent")
+
+[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("Actor")]
+script = ExtResource("5_6ktm1")
+Actor = NodePath("..")
+Velocity = Vector2(0, -1000)
+
+[node name="ScaleComponent" type="Node" parent="." node_paths=PackedStringArray("Sprite")]
+script = ExtResource("7_0yb1w")
+Sprite = NodePath("..")
+ScaleAmount = Vector2(2, 2)
+
+[node name="EffectOnImpactComponent" type="Node" parent="." node_paths=PackedStringArray("_hitboxComponent", "_position")]
+script = ExtResource("10_7npst")
+EffectScene = "res://player_projectiles/pp_missile/pp_missile_mach_explosion.tscn"
+_hitboxComponent = NodePath("../HitboxComponent")
+_position = NodePath("../Marker2D")
+metadata/_custom_type_script = "uid://bmn7mtg77u3ou"
+
+[node name="DespawnOnExitComponent" type="Node" parent="." node_paths=PackedStringArray("_visibleNotifier")]
+script = ExtResource("8_ruo5s")
+_visibleNotifier = NodePath("../VisibleOnScreenNotifier2D")
+
+[node name="SFXOnSpawnComponent" type="Node" parent="."]
+script = ExtResource("13_bacxp")
+SoundKey = "missile"
+metadata/_custom_type_script = "uid://dqdcsaeyk7aut"

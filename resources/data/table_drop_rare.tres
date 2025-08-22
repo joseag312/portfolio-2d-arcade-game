@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="WeightedDropTable" load_steps=6 format=3 uid="uid://dvid4yjb07hiu"]
+
+[ext_resource type="Script" uid="uid://bqt7kbq1y8wlm" path="res://drops/drop_base/WeightedDropEntry.cs" id="1_ycuil"]
+[ext_resource type="Resource" uid="uid://bli0lsftns25s" path="res://resources/data/drop_health_rare.tres" id="2_ycuil"]
+[ext_resource type="Resource" uid="uid://cn6kuwmwaq68t" path="res://resources/data/drop_mewnits_rare.tres" id="3_ng1nq"]
+[ext_resource type="Resource" uid="uid://b7bskwgxdlqr0" path="res://resources/data/drop_pawllars_rare.tres" id="4_ycuil"]
+[ext_resource type="Script" uid="uid://dnlb2cp2dw8ku" path="res://drops/drop_base/WeightedDropTable.cs" id="5_1vstb"]
+
+[resource]
+script = ExtResource("5_1vstb")
+Entries = Array[ExtResource("1_ycuil")]([ExtResource("2_ycuil"), ExtResource("3_ng1nq"), ExtResource("4_ycuil")])
+metadata/_custom_type_script = "uid://dnlb2cp2dw8ku"

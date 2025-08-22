@@ -1,0 +1,23 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://cq5n34dfm2rpt"]
+
+[ext_resource type="Texture2D" uid="uid://bn6xcqlnsa4an" path="res://assets/cats/cat_friend/default.png" id="1_jdwhu"]
+[ext_resource type="Texture2D" uid="uid://bovcck3fjy1d6" path="res://assets/cats/cat_friend/friday.png" id="2_ivwpt"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jdwhu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ivwpt")
+}],
+"loop": true,
+"name": &"happy",
+"speed": 5.0
+}]

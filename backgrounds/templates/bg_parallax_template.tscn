@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://uwm62ooy0apb"]
+
+[ext_resource type="Script" uid="uid://cl63fdr5i2w3j" path="res://components/ScrollingComponent.cs" id="1_fg3k3"]
+[ext_resource type="Script" uid="uid://du6dihgjlhy2v" path="res://components/AutoBackgroundTriggerComponent.cs" id="1_ojc3k"]
+[ext_resource type="Script" uid="uid://ba0sll2itlgxb" path="res://components/BackgroundLoadingComponent.cs" id="1_p0rvj"]
+[ext_resource type="Script" uid="uid://1ag5amfn00dm" path="res://components/BackgroundFadeComponent.cs" id="3_e68yp"]
+
+[node name="BgParallaxTemplate" type="ParallaxBackground"]
+
+[node name="AutoBackgroundTriggerComponent" type="Node" parent="."]
+script = ExtResource("1_ojc3k")
+metadata/_custom_type_script = "uid://du6dihgjlhy2v"
+
+[node name="BackgroundLoadingComponent" type="Node" parent="." node_paths=PackedStringArray("BackgroundLayer", "SlowLayer", "FastLayer", "autoBackgroundTriggerComponent")]
+script = ExtResource("1_p0rvj")
+BackgroundLayer = NodePath("../Background/BackgroundTexture")
+SlowLayer = NodePath("../SlowLayer/SlowLayerTexture")
+FastLayer = NodePath("../FastLayer/FastLayerTexture")
+autoBackgroundTriggerComponent = NodePath("../AutoBackgroundTriggerComponent")
+metadata/_custom_type_script = "uid://ba0sll2itlgxb"
+
+[node name="BackgroundFadeComponent" type="Node" parent="." node_paths=PackedStringArray("BackgroundLayer", "SlowLayer", "FastLayer")]
+script = ExtResource("3_e68yp")
+BackgroundLayer = NodePath("../Background/BackgroundTexture")
+SlowLayer = NodePath("../SlowLayer/SlowLayerTexture")
+FastLayer = NodePath("../FastLayer/FastLayerTexture")
+metadata/_custom_type_script = "uid://1ag5amfn00dm"
+
+[node name="ScrollingComponent" type="Node2D" parent="." node_paths=PackedStringArray("Background", "SlowLayer", "FastLayer")]
+script = ExtResource("1_fg3k3")
+Background = NodePath("../Background")
+SlowLayer = NodePath("../SlowLayer")
+FastLayer = NodePath("../FastLayer")
+
+[node name="Background" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(0, 720)
+
+[node name="BackgroundTexture" type="TextureRect" parent="Background"]
+z_index = 1
+z_as_relative = false
+offset_right = 160.0
+offset_bottom = 240.0
+stretch_mode = 1
+
+[node name="SlowLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(0, 720)
+
+[node name="SlowLayerTexture" type="TextureRect" parent="SlowLayer"]
+z_index = 2
+z_as_relative = false
+offset_right = 160.0
+offset_bottom = 240.0
+stretch_mode = 1
+
+[node name="FastLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(0, 720)
+
+[node name="FastLayerTexture" type="TextureRect" parent="FastLayer"]
+z_index = 3
+z_as_relative = false
+offset_right = 160.0
+offset_bottom = 240.0
+stretch_mode = 1

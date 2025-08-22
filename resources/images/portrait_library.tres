@@ -1,0 +1,81 @@
+[gd_resource type="Resource" script_class="PortraitLibrary" load_steps=19 format=3 uid="uid://btyll18mv1tyi"]
+
+[ext_resource type="Script" uid="uid://c46qo2t8illk3" path="res://components/PortraitEntry.cs" id="1_yv1wf"]
+[ext_resource type="SpriteFrames" uid="uid://03wicx464iuh" path="res://resources/images/oiia.tres" id="2_o2j7y"]
+[ext_resource type="Script" uid="uid://dsha2k8vnl0x7" path="res://components/PortraitLibrary.cs" id="2_ub60t"]
+[ext_resource type="SpriteFrames" uid="uid://cfv8bovj5y3wy" path="res://resources/images/announcement.tres" id="2_waejq"]
+[ext_resource type="SpriteFrames" uid="uid://bpg75fqiy4fbl" path="res://resources/images/rookie.tres" id="3_o2j7y"]
+[ext_resource type="SpriteFrames" uid="uid://cf0cyhbs36w28" path="res://resources/images/commander.tres" id="4_3p7no"]
+[ext_resource type="SpriteFrames" uid="uid://1ski7p2xqpy2" path="res://resources/images/brisket.tres" id="4_c8v5e"]
+[ext_resource type="SpriteFrames" uid="uid://cq5n34dfm2rpt" path="res://resources/images/friend.tres" id="5_ce85m"]
+[ext_resource type="SpriteFrames" uid="uid://hrstvxl66b78" path="res://resources/images/fortune.tres" id="8_ce85m"]
+[ext_resource type="SpriteFrames" uid="uid://chyhx10pscv7" path="res://resources/images/storekeep.tres" id="9_62bb1"]
+
+[sub_resource type="Resource" id="Resource_g62e4"]
+script = ExtResource("1_yv1wf")
+Key = "Announcement"
+DisplayName = "OIIA"
+AnimationKey = ""
+Frames = ExtResource("2_waejq")
+metadata/_custom_type_script = "uid://c46qo2t8illk3"
+
+[sub_resource type="Resource" id="Resource_o2j7y"]
+script = ExtResource("1_yv1wf")
+Key = "Brisket"
+DisplayName = "Sad Man"
+AnimationKey = ""
+Frames = ExtResource("4_c8v5e")
+metadata/_custom_type_script = "uid://c46qo2t8illk3"
+
+[sub_resource type="Resource" id="Resource_62bb1"]
+script = ExtResource("1_yv1wf")
+Key = "Commander"
+DisplayName = "Boss Cat"
+AnimationKey = ""
+Frames = ExtResource("4_3p7no")
+metadata/_custom_type_script = "uid://c46qo2t8illk3"
+
+[sub_resource type="Resource" id="Resource_6aewn"]
+script = ExtResource("1_yv1wf")
+Key = "Friend"
+DisplayName = "Bob"
+AnimationKey = ""
+Frames = ExtResource("5_ce85m")
+metadata/_custom_type_script = "uid://c46qo2t8illk3"
+
+[sub_resource type="Resource" id="Resource_waejq"]
+script = ExtResource("1_yv1wf")
+Key = "Oiia"
+DisplayName = "Spin God"
+AnimationKey = ""
+Frames = ExtResource("2_o2j7y")
+metadata/_custom_type_script = "uid://c46qo2t8illk3"
+
+[sub_resource type="Resource" id="Resource_c8v5e"]
+script = ExtResource("1_yv1wf")
+Key = "Rookie"
+DisplayName = "New Cat"
+AnimationKey = ""
+Frames = ExtResource("3_o2j7y")
+metadata/_custom_type_script = "uid://c46qo2t8illk3"
+
+[sub_resource type="Resource" id="Resource_5j6po"]
+script = ExtResource("1_yv1wf")
+Key = "Fortune"
+DisplayName = "Cat GPT"
+AnimationKey = ""
+Frames = ExtResource("8_ce85m")
+metadata/_custom_type_script = "uid://c46qo2t8illk3"
+
+[sub_resource type="Resource" id="Resource_h26uf"]
+script = ExtResource("1_yv1wf")
+Key = "Storekeep"
+DisplayName = "Chester"
+AnimationKey = ""
+Frames = ExtResource("9_62bb1")
+metadata/_custom_type_script = "uid://c46qo2t8illk3"
+
+[resource]
+script = ExtResource("2_ub60t")
+Entries = Array[ExtResource("1_yv1wf")]([SubResource("Resource_g62e4"), SubResource("Resource_o2j7y"), SubResource("Resource_62bb1"), SubResource("Resource_6aewn"), SubResource("Resource_waejq"), SubResource("Resource_c8v5e"), SubResource("Resource_5j6po"), SubResource("Resource_h26uf")])
+metadata/_custom_type_script = "uid://dsha2k8vnl0x7"

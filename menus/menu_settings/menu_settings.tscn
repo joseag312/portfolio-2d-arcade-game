@@ -1,0 +1,315 @@
+[gd_scene load_steps=7 format=3 uid="uid://bbws6jeumt8b3"]
+
+[ext_resource type="Script" uid="uid://cnajquwdn63sh" path="res://menus/menu_settings/MenuSettings.cs" id="1_vi8jm"]
+[ext_resource type="Script" uid="uid://c4iesx17v7vif" path="res://components/MenuLoadComponent.cs" id="2_mx7qq"]
+[ext_resource type="Script" uid="uid://bbg1n3i80miej" path="res://components/MenuFadeComponent.cs" id="3_vi8jm"]
+[ext_resource type="LabelSettings" uid="uid://bho4lu11n1jvq" path="res://resources/fonts/font_syne_white_80_outline.tres" id="4_fpyie"]
+[ext_resource type="LabelSettings" uid="uid://bukg7oybj34mn" path="res://resources/fonts/font_syne_red_64_outline.tres" id="4_mx7qq"]
+[ext_resource type="Texture2D" uid="uid://cvs2ottwp4m85" path="res://assets/gui/gui_back_arrow.png" id="7_fpyie"]
+
+[node name="MenuSettings" type="Control" node_paths=PackedStringArray("StartOverContainerVBox", "PreferencesContainerVBox", "ReturnContainerHBox", "OpacitySlider", "OpacityLabel", "VolumeSlider", "VolumeLabel", "SfxSlider", "SfxLabel", "MuteToggleButton", "StartOverButton", "SaveSettingsButton", "ReturnButton", "ConfirmStartOverButton", "CancelStartOverButton", "MenuFadeComponent", "MenuLoadComponent")]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_vi8jm")
+StartOverContainerVBox = NodePath("UILayer/CenterContainer/StartOverContainer")
+PreferencesContainerVBox = NodePath("UILayer/CenterContainer/PreferencesContainer")
+ReturnContainerHBox = NodePath("UILayer/CenterContainer/BackArrowContainer")
+OpacitySlider = NodePath("UILayer/CenterContainer/PreferencesContainer/RowHBox/ValuesVBox/VBoxContainer/OpacitySlider")
+OpacityLabel = NodePath("UILayer/CenterContainer/PreferencesContainer/RowHBox/VBoxContainer/VBoxContainer4/OpacityValue")
+VolumeSlider = NodePath("UILayer/CenterContainer/PreferencesContainer/RowHBox/ValuesVBox/VBoxContainer2/VolumeSlider")
+VolumeLabel = NodePath("UILayer/CenterContainer/PreferencesContainer/RowHBox/VBoxContainer/VBoxContainer/VolumeValue")
+SfxSlider = NodePath("UILayer/CenterContainer/PreferencesContainer/RowHBox/ValuesVBox/VBoxContainer4/SFXSlider")
+SfxLabel = NodePath("UILayer/CenterContainer/PreferencesContainer/RowHBox/VBoxContainer/VBoxContainer2/SFXValue")
+MuteToggleButton = NodePath("UILayer/CenterContainer/PreferencesContainer/RowHBox/ValuesVBox/VBoxContainer3/HBoxContainer/MuteButton")
+StartOverButton = NodePath("UILayer/CenterContainer/PreferencesContainer/HBoxContainer/StartOverButton")
+SaveSettingsButton = NodePath("UILayer/CenterContainer/PreferencesContainer/HBoxContainer/SaveSettingsButton")
+ReturnButton = NodePath("UILayer/CenterContainer/BackArrowContainer/VBoxContainer/ReturnButton")
+ConfirmStartOverButton = NodePath("UILayer/CenterContainer/StartOverContainer/RowHBox/ResetConfirmButton")
+CancelStartOverButton = NodePath("UILayer/CenterContainer/StartOverContainer/RowHBox/ResetCancelButton")
+MenuFadeComponent = NodePath("MenuFadeComponent")
+MenuLoadComponent = NodePath("MenuLoadComponent")
+
+[node name="MenuLoadComponent" type="Node" parent="." node_paths=PackedStringArray("CanvasContainer")]
+script = ExtResource("2_mx7qq")
+CanvasContainer = NodePath("../UILayer/CenterContainer")
+FadeDuration = 1.0
+metadata/_custom_type_script = "uid://c4iesx17v7vif"
+
+[node name="MenuFadeComponent" type="Node" parent="." node_paths=PackedStringArray("CanvasContainer")]
+script = ExtResource("3_vi8jm")
+CanvasContainer = NodePath("../UILayer/CenterContainer")
+metadata/_custom_type_script = "uid://bbg1n3i80miej"
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="CenterContainer" type="CenterContainer" parent="UILayer"]
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="BackArrowContainer" type="HBoxContainer" parent="UILayer/CenterContainer"]
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 2
+
+[node name="m30" type="Control" parent="UILayer/CenterContainer/BackArrowContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UILayer/CenterContainer/BackArrowContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="ReturnButton" type="Button" parent="UILayer/CenterContainer/BackArrowContainer/VBoxContainer"]
+layout_mode = 2
+icon = ExtResource("7_fpyie")
+icon_alignment = 1
+
+[node name="m30" type="Control" parent="UILayer/CenterContainer/BackArrowContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="PreferencesContainer" type="VBoxContainer" parent="UILayer/CenterContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="TitleHBox" type="HBoxContainer" parent="UILayer/CenterContainer/PreferencesContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="UILayer/CenterContainer/PreferencesContainer/TitleHBox"]
+layout_mode = 2
+text = "Preferences"
+label_settings = ExtResource("4_fpyie")
+
+[node name="spacer1" type="Control" parent="UILayer/CenterContainer/PreferencesContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="RowHBox" type="HBoxContainer" parent="UILayer/CenterContainer/PreferencesContainer"]
+layout_mode = 2
+
+[node name="spacer1" type="Control" parent="UILayer/CenterContainer/PreferencesContainer/RowHBox"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="KeysVBox" type="VBoxContainer" parent="UILayer/CenterContainer/PreferencesContainer/RowHBox"]
+custom_minimum_size = Vector2(210, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UILayer/CenterContainer/PreferencesContainer/RowHBox/KeysVBox"]
+custom_minimum_size = Vector2(0, 88)
+layout_mode = 2
+alignment = 1
+
+[node name="OpacityText" type="Label" parent="UILayer/CenterContainer/PreferencesContainer/RowHBox/KeysVBox/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 40
+text = "Opacity"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="UILayer/CenterContainer/PreferencesContainer/RowHBox/KeysVBox"]
+custom_minimum_size = Vector2(0, 88)
+layout_mode = 2
+alignment = 1
+
+[node name="VolumeText" type="Label" parent="UILayer/CenterContainer/PreferencesContainer/RowHBox/KeysVBox/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 40
+text = "Music"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="UILayer/CenterContainer/PreferencesContainer/RowHBox/KeysVBox"]
+custom_minimum_size = Vector2(0, 88)
+layout_mode = 2
+alignment = 1
+
+[node name="SFXText" type="Label" parent="UILayer/CenterContainer/PreferencesContainer/RowHBox/KeysVBox/VBoxContainer3"]
+layout_mode = 2
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 40
+text = "SFX"
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="UILayer/CenterContainer/PreferencesContainer/RowHBox/KeysVBox"]
+custom_minimum_size = Vector2(0, 88)
+layout_mode = 2
+alignment = 1
+
+[node name="MuteText" type="Label" parent="UILayer/CenterContainer/PreferencesContainer/RowHBox/KeysVBox/VBoxContainer4"]
+layout_mode = 2
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 40
+text = "Mute"
+
+[node name="ValuesVBox" type="VBoxContainer" parent="UILayer/CenterContainer/PreferencesContainer/RowHBox"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UILayer/CenterContainer/PreferencesContainer/RowHBox/ValuesVBox"]
+custom_minimum_size = Vector2(0, 88)
+layout_mode = 2
+alignment = 1
+
+[node name="OpacitySlider" type="HSlider" parent="UILayer/CenterContainer/PreferencesContainer/RowHBox/ValuesVBox/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="UILayer/CenterContainer/PreferencesContainer/RowHBox/ValuesVBox"]
+custom_minimum_size = Vector2(0, 88)
+layout_mode = 2
+alignment = 1
+
+[node name="VolumeSlider" type="HSlider" parent="UILayer/CenterContainer/PreferencesContainer/RowHBox/ValuesVBox/VBoxContainer2"]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="UILayer/CenterContainer/PreferencesContainer/RowHBox/ValuesVBox"]
+custom_minimum_size = Vector2(0, 88)
+layout_mode = 2
+alignment = 1
+
+[node name="SFXSlider" type="HSlider" parent="UILayer/CenterContainer/PreferencesContainer/RowHBox/ValuesVBox/VBoxContainer4"]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="UILayer/CenterContainer/PreferencesContainer/RowHBox/ValuesVBox"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UILayer/CenterContainer/PreferencesContainer/RowHBox/ValuesVBox/VBoxContainer3"]
+layout_mode = 2
+alignment = 1
+
+[node name="MuteButton" type="Button" parent="UILayer/CenterContainer/PreferencesContainer/RowHBox/ValuesVBox/VBoxContainer3/HBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+
+[node name="spacer2" type="Control" parent="UILayer/CenterContainer/PreferencesContainer/RowHBox"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UILayer/CenterContainer/PreferencesContainer/RowHBox"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="UILayer/CenterContainer/PreferencesContainer/RowHBox/VBoxContainer"]
+custom_minimum_size = Vector2(0, 88)
+layout_mode = 2
+alignment = 1
+
+[node name="OpacityValue" type="Label" parent="UILayer/CenterContainer/PreferencesContainer/RowHBox/VBoxContainer/VBoxContainer4"]
+layout_mode = 2
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 20
+text = "100%"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UILayer/CenterContainer/PreferencesContainer/RowHBox/VBoxContainer"]
+custom_minimum_size = Vector2(0, 88)
+layout_mode = 2
+alignment = 1
+
+[node name="VolumeValue" type="Label" parent="UILayer/CenterContainer/PreferencesContainer/RowHBox/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 20
+text = "100%"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="UILayer/CenterContainer/PreferencesContainer/RowHBox/VBoxContainer"]
+custom_minimum_size = Vector2(0, 88)
+layout_mode = 2
+alignment = 1
+
+[node name="SFXValue" type="Label" parent="UILayer/CenterContainer/PreferencesContainer/RowHBox/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 20
+text = "100%"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="UILayer/CenterContainer/PreferencesContainer/RowHBox/VBoxContainer"]
+custom_minimum_size = Vector2(0, 88)
+layout_mode = 2
+alignment = 1
+
+[node name="spacer3" type="Control" parent="UILayer/CenterContainer/PreferencesContainer/RowHBox"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="spacer2" type="Control" parent="UILayer/CenterContainer/PreferencesContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UILayer/CenterContainer/PreferencesContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="StartOverButton" type="Button" parent="UILayer/CenterContainer/PreferencesContainer/HBoxContainer"]
+layout_mode = 2
+text = "Start Over"
+expand_icon = true
+
+[node name="m30" type="Control" parent="UILayer/CenterContainer/PreferencesContainer/HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="SaveSettingsButton" type="Button" parent="UILayer/CenterContainer/PreferencesContainer/HBoxContainer"]
+layout_mode = 2
+text = "Save"
+expand_icon = true
+
+[node name="StartOverContainer" type="VBoxContainer" parent="UILayer/CenterContainer"]
+visible = false
+layout_mode = 2
+alignment = 1
+
+[node name="TitleHBox" type="HBoxContainer" parent="UILayer/CenterContainer/StartOverContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="UILayer/CenterContainer/StartOverContainer/TitleHBox"]
+layout_mode = 2
+text = "Reset all data?"
+label_settings = ExtResource("4_mx7qq")
+
+[node name="spacer1" type="Control" parent="UILayer/CenterContainer/StartOverContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="RowHBox" type="HBoxContainer" parent="UILayer/CenterContainer/StartOverContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="spacer1" type="Control" parent="UILayer/CenterContainer/StartOverContainer/RowHBox"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="ResetConfirmButton" type="Button" parent="UILayer/CenterContainer/StartOverContainer/RowHBox"]
+layout_mode = 2
+text = "Yes"
+expand_icon = true
+
+[node name="spacer2" type="Control" parent="UILayer/CenterContainer/StartOverContainer/RowHBox"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="ResetCancelButton" type="Button" parent="UILayer/CenterContainer/StartOverContainer/RowHBox"]
+layout_mode = 2
+text = "No"
+expand_icon = true
+
+[node name="spacer3" type="Control" parent="UILayer/CenterContainer/StartOverContainer/RowHBox"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="spacer2" type="Control" parent="UILayer/CenterContainer/StartOverContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2

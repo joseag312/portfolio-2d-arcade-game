@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="WeightedDropTable" load_steps=6 format=3 uid="uid://bpgwuionr3ilg"]
+
+[ext_resource type="Script" uid="uid://bqt7kbq1y8wlm" path="res://drops/drop_base/WeightedDropEntry.cs" id="1_o8cku"]
+[ext_resource type="Resource" uid="uid://bujaixxr2mnda" path="res://resources/data/drop_health_epic.tres" id="2_o8cku"]
+[ext_resource type="Resource" uid="uid://cfcp83ln70dst" path="res://resources/data/drop_mewnits_epic.tres" id="3_ofg31"]
+[ext_resource type="Resource" uid="uid://0fr2ocn4hidq" path="res://resources/data/drop_pawllars_epic.tres" id="4_6kdpm"]
+[ext_resource type="Script" uid="uid://dnlb2cp2dw8ku" path="res://drops/drop_base/WeightedDropTable.cs" id="5_gley7"]
+
+[resource]
+script = ExtResource("5_gley7")
+Entries = Array[ExtResource("1_o8cku")]([ExtResource("2_o8cku"), ExtResource("3_ofg31"), ExtResource("4_6kdpm")])
+metadata/_custom_type_script = "uid://dnlb2cp2dw8ku"

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://l7itd7lom6ic"]
+
+[ext_resource type="Script" uid="uid://c2qimp8m4m42q" path="res://player_ship/ShipDamageText.cs" id="1_uwyk1"]
+[ext_resource type="LabelSettings" uid="uid://d0rqlbc3g4ff1" path="res://resources/fonts/font_kenney_purple_24.tres" id="2_xgos0"]
+
+[node name="ShipDamageText" type="Node2D" node_paths=PackedStringArray("_label")]
+z_index = 1
+script = ExtResource("1_uwyk1")
+_label = NodePath("Label")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+label_settings = ExtResource("2_xgos0")

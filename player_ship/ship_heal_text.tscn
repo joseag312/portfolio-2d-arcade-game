@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjfljv1wdsh1c"]
+
+[ext_resource type="Script" uid="uid://dwjnc6ceyd2au" path="res://player_ship/ShipHealText.cs" id="1_vwskt"]
+[ext_resource type="LabelSettings" uid="uid://ua5p72yi5gp0" path="res://resources/fonts/font_kenney_green_24.tres" id="2_vwskt"]
+
+[node name="ShipHealText" type="Node2D" node_paths=PackedStringArray("_label")]
+z_index = 1
+script = ExtResource("1_vwskt")
+_label = NodePath("Label")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+label_settings = ExtResource("2_vwskt")

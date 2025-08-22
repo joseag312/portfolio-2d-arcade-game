@@ -1,0 +1,77 @@
+[gd_resource type="Theme" load_steps=14 format=3 uid="uid://6kgkoc3btpsh"]
+
+[ext_resource type="FontFile" uid="uid://rj7fco2gskcg" path="res://assets/fonts/orbitron_variable.ttf" id="1_i4ejt"]
+[ext_resource type="Texture2D" uid="uid://dgn6bedgr7arl" path="res://assets/gui/gui_cat_paw_white.png" id="2_hf3i3"]
+[ext_resource type="Texture2D" uid="uid://dl054xtgwjpj0" path="res://assets/gui/gui_container _basic_transparent.png" id="2_yjg5f"]
+[ext_resource type="Texture2D" uid="uid://cvlywsscpbsds" path="res://assets/gui/gui_button.png" id="4_1nr78"]
+[ext_resource type="Texture2D" uid="uid://cdonick07ewcs" path="res://assets/gui/gui_button_disabled.png" id="5_7adcq"]
+[ext_resource type="Texture2D" uid="uid://bmhhk4rego5xu" path="res://assets/gui/gui_button_highlight.png" id="6_6bdnh"]
+[ext_resource type="Texture2D" uid="uid://l8pswimjbyv3" path="res://assets/gui/gui_bar.png" id="7_yoenm"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xtbu8"]
+texture = ExtResource("2_yjg5f")
+texture_margin_left = 19.0
+texture_margin_top = 19.0
+texture_margin_right = 19.0
+texture_margin_bottom = 19.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0wthw"]
+texture = ExtResource("2_yjg5f")
+texture_margin_left = 19.0
+texture_margin_top = 19.0
+texture_margin_right = 19.0
+texture_margin_bottom = 19.0
+modulate_color = Color(0.901961, 0.901961, 0.901961, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dagba"]
+texture = ExtResource("2_yjg5f")
+texture_margin_left = 19.0
+texture_margin_top = 19.0
+texture_margin_right = 19.0
+texture_margin_bottom = 19.0
+modulate_color = Color(0.823529, 0.823529, 0.823529, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i4ejt"]
+texture = ExtResource("2_yjg5f")
+texture_margin_left = 19.0
+texture_margin_top = 19.0
+texture_margin_right = 19.0
+texture_margin_bottom = 19.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tvx0j"]
+texture = ExtResource("7_yoenm")
+texture_margin_left = 2.0
+texture_margin_top = 3.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hf3i3"]
+
+[resource]
+Button/colors/font_hover_color = Color(0.568627, 0.490196, 0.901961, 1)
+Button/colors/font_hover_pressed_color = Color(0.568627, 0.490196, 0.901961, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 1, 1, 1)
+Button/colors/icon_hover_color = Color(0.568627, 0.490196, 0.901961, 1)
+Button/colors/icon_hover_pressed_color = Color(0.568627, 0.490196, 0.901961, 1)
+Button/colors/icon_pressed_color = Color(0, 1, 1, 1)
+Button/constants/icon_max_width = 50
+Button/constants/outline_size = 20
+Button/font_sizes/font_size = 40
+Button/fonts/font = ExtResource("1_i4ejt")
+Button/icons/icon = ExtResource("2_hf3i3")
+Button/styles/disabled = SubResource("StyleBoxTexture_xtbu8")
+Button/styles/focus = SubResource("StyleBoxTexture_xtbu8")
+Button/styles/hover = SubResource("StyleBoxTexture_0wthw")
+Button/styles/hover_pressed = SubResource("StyleBoxTexture_0wthw")
+Button/styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_0wthw")
+Button/styles/normal = SubResource("StyleBoxTexture_dagba")
+Button/styles/pressed = SubResource("StyleBoxTexture_i4ejt")
+HSlider/icons/grabber = ExtResource("4_1nr78")
+HSlider/icons/grabber_disabled = ExtResource("5_7adcq")
+HSlider/icons/grabber_highlight = ExtResource("6_6bdnh")
+HSlider/styles/slider = SubResource("StyleBoxTexture_tvx0j")
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 5
+Label/font_sizes/font_size = 24
+Label/fonts/font = ExtResource("1_i4ejt")
+PanelContainer/styles/panel = SubResource("StyleBoxEmpty_hf3i3")

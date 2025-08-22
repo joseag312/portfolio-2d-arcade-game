@@ -1,0 +1,158 @@
+[gd_scene load_steps=23 format=3 uid="uid://bpq5xvm10rpv7"]
+
+[ext_resource type="Texture2D" uid="uid://bhv12kx6kavy3" path="res://assets/effects/explosions_3.png" id="1_0wdyj"]
+[ext_resource type="Texture2D" uid="uid://4j4l20o17610" path="res://assets/player_projectiles/missile_explosion.png" id="1_prcan"]
+[ext_resource type="Script" uid="uid://c4o8660pjq6yc" path="res://components/HitboxComponent.cs" id="2_xskao"]
+[ext_resource type="Script" uid="uid://dnq7vpxprxfd4" path="res://components/WeaponDataLoaderComponent.cs" id="5_2pu8b"]
+[ext_resource type="Script" uid="uid://cpr6s8ivysmf2" path="res://components/EffectSpawnComponent.cs" id="6_xskao"]
+[ext_resource type="Script" uid="uid://bppah0v3qiu6u" path="res://components/ScaleComponent.cs" id="7_w844y"]
+[ext_resource type="Script" uid="uid://dqdcsaeyk7aut" path="res://components/SFXOnSpawnComponent.cs" id="8_0wdyj"]
+[ext_resource type="Script" uid="uid://c0p7rysr544jk" path="res://components/DespawnOnExitComponent.cs" id="8_1nkvp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cm0bd"]
+atlas = ExtResource("1_prcan")
+region = Rect2(384, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0o88y"]
+atlas = ExtResource("1_0wdyj")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wdyj"]
+atlas = ExtResource("1_0wdyj")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xskao"]
+atlas = ExtResource("1_0wdyj")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqhyr"]
+atlas = ExtResource("1_0wdyj")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnfqj"]
+atlas = ExtResource("1_0wdyj")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2pu8b"]
+atlas = ExtResource("1_0wdyj")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2s6pc"]
+atlas = ExtResource("1_0wdyj")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w844y"]
+atlas = ExtResource("1_0wdyj")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1nkvp"]
+atlas = ExtResource("1_0wdyj")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyxdp"]
+atlas = ExtResource("1_0wdyj")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30fgh"]
+atlas = ExtResource("1_0wdyj")
+region = Rect2(640, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lk588"]
+atlas = ExtResource("1_0wdyj")
+region = Rect2(704, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w8w1u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cm0bd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0o88y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0wdyj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xskao")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqhyr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnfqj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2pu8b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2s6pc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w844y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1nkvp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pyxdp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30fgh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lk588")
+}],
+"loop": false,
+"name": &"default",
+"speed": 18.0
+}]
+
+[node name="PPMissileMachExplosion" type="Node2D"]
+scale = Vector2(2, 2)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_w8w1u")
+frame = 12
+frame_progress = 1.0
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, -36.5)
+
+[node name="HitboxComponent" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("2_xskao")
+Damage = 1
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitboxComponent"]
+polygon = PackedVector2Array(10.5, -58, -20, -52.5, -44.5, -36.5, -58, -9.5, -59, 18.5, -44.5, 37.5, -17, 54.5, 8, 61, 41.5, 43.5, 56.5, 12, 57, -19, 40, -48.5)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(2.86102e-07, 1)
+scale = Vector2(0.2, 0.4)
+
+[node name="WeaponDataLoaderComponent" type="Node" parent="." node_paths=PackedStringArray("HitboxComponent")]
+script = ExtResource("5_2pu8b")
+WeaponKey = "PPMissileMach"
+HitboxComponent = NodePath("../HitboxComponent")
+
+[node name="EffectSpawnComponent" type="Node" parent="." node_paths=PackedStringArray("_animatedSprite")]
+script = ExtResource("6_xskao")
+_animatedSprite = NodePath("../AnimatedSprite2D")
+metadata/_custom_type_script = "uid://cpr6s8ivysmf2"
+
+[node name="ScaleComponent" type="Node" parent="." node_paths=PackedStringArray("Sprite")]
+script = ExtResource("7_w844y")
+Sprite = NodePath("..")
+ScaleAmount = Vector2(2, 2)
+
+[node name="DespawnOnExitComponent" type="Node" parent="." node_paths=PackedStringArray("_visibleNotifier")]
+script = ExtResource("8_1nkvp")
+_visibleNotifier = NodePath("../VisibleOnScreenNotifier2D")
+
+[node name="SFXOnSpawnComponent" type="Node" parent="."]
+script = ExtResource("8_0wdyj")
+SoundKey = "explosion"
+metadata/_custom_type_script = "uid://dqdcsaeyk7aut"

@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://djgvlo7l4rj4u"]
+
+[ext_resource type="Script" uid="uid://c0p7rysr544jk" path="res://components/DespawnOnExitComponent.cs" id="1_t3n2a"]
+[ext_resource type="Script" uid="uid://5c13s4gkqo4w" path="res://components/HurtboxComponent.cs" id="1_wjdvq"]
+[ext_resource type="Script" uid="uid://bngbbdfy7uu7s" path="res://components/MoveComponent.cs" id="2_wjdvq"]
+[ext_resource type="Script" uid="uid://bon7ymgei2vwp" path="res://components/PulseComponent.cs" id="4_lkagc"]
+
+[node name="DropBase" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="HurtboxComponent" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_wjdvq")
+metadata/_custom_type_script = "uid://5c13s4gkqo4w"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent"]
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="DespawnOnExitComponent" type="Node" parent="." node_paths=PackedStringArray("_visibleNotifier")]
+script = ExtResource("1_t3n2a")
+_visibleNotifier = NodePath("../VisibleOnScreenNotifier2D")
+metadata/_custom_type_script = "uid://c0p7rysr544jk"
+
+[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("Actor")]
+script = ExtResource("2_wjdvq")
+Actor = NodePath("..")
+Velocity = Vector2(0, 50)
+metadata/_custom_type_script = "uid://bngbbdfy7uu7s"
+
+[node name="PulseComponent" type="Node" parent="." node_paths=PackedStringArray("Target")]
+script = ExtResource("4_lkagc")
+Target = NodePath("..")
+ScaleAmplitude = 0.1
+PulseSpeed = 10.0
+FlashAmplitude = 0.5
+metadata/_custom_type_script = "uid://bon7ymgei2vwp"

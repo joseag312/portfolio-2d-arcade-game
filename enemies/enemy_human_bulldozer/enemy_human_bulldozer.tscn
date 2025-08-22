@@ -1,0 +1,204 @@
+[gd_scene load_steps=29 format=3 uid="uid://c5xf8n0lytpa3"]
+
+[ext_resource type="Texture2D" uid="uid://baaje4crapiwc" path="res://assets/enemy/enemy_human_bulldozer.png" id="1_8d6a6"]
+[ext_resource type="Script" uid="uid://5c13s4gkqo4w" path="res://components/HurtboxComponent.cs" id="2_cc6cv"]
+[ext_resource type="Script" uid="uid://c4o8660pjq6yc" path="res://components/HitboxComponent.cs" id="3_t5621"]
+[ext_resource type="Script" uid="uid://bv0abqlho38ta" path="res://components/PersistenceComponent.cs" id="4_2y4q0"]
+[ext_resource type="Script" uid="uid://15c5bbm4dl76" path="res://components/SpawnerComponent.cs" id="5_ixwpb"]
+[ext_resource type="PackedScene" uid="uid://b3w8nydcibgec" path="res://effects/ef_explosion_red.tscn" id="6_70ymy"]
+[ext_resource type="Script" uid="uid://bngbbdfy7uu7s" path="res://components/MoveComponent.cs" id="7_e1dmu"]
+[ext_resource type="Script" uid="uid://d2bgm6d7vt2ps" path="res://components/RandomMovementComponent.cs" id="8_hmcre"]
+[ext_resource type="Script" uid="uid://enpb5o35rrvx" path="res://components/FlashComponent.cs" id="8_jdcii"]
+[ext_resource type="Script" uid="uid://bppah0v3qiu6u" path="res://components/ScaleComponent.cs" id="9_4ogkm"]
+[ext_resource type="Script" uid="uid://pfknuewrewab" path="res://components/StatsComponent.cs" id="10_7l8xe"]
+[ext_resource type="Script" uid="uid://cj45rvm6ddjsm" path="res://components/ShakeComponent.cs" id="11_calnl"]
+[ext_resource type="Script" uid="uid://bbbochxeac80o" path="res://components/HurtComponent.cs" id="12_87xll"]
+[ext_resource type="Script" uid="uid://dq0illjjctl11" path="res://components/DestroyedComponent.cs" id="13_rk78g"]
+[ext_resource type="Script" uid="uid://cuxaexqd1d274" path="res://components/HealthBarComponent.cs" id="14_tjndp"]
+[ext_resource type="Script" uid="uid://c0p7rysr544jk" path="res://components/DespawnOnExitComponent.cs" id="15_pu463"]
+[ext_resource type="Script" uid="uid://bsn1hx6fcpuet" path="res://components/DropComponent.cs" id="16_8rgix"]
+[ext_resource type="Resource" uid="uid://bpgwuionr3ilg" path="res://resources/data/table_drop_epic.tres" id="17_8d6a6"]
+[ext_resource type="Script" uid="uid://birtkwumpwfoo" path="res://components/EnemyWeaponComponent.cs" id="18_cew2j"]
+[ext_resource type="PackedScene" uid="uid://dqw2ymg3bv0wx" path="res://enemy_projectiles/ep_plasma_web/ep_plasma_web.tscn" id="19_8d6a6"]
+[ext_resource type="Script" uid="uid://cocvh8r44cmn4" path="res://components/DropOnHitComponent.cs" id="19_44ycn"]
+[ext_resource type="PackedScene" uid="uid://b8kjheqlrm40x" path="res://enemy_projectiles/ep_plasma_basic/ep_plasma_basic.tscn" id="19_jatfw"]
+[ext_resource type="Resource" uid="uid://ckn5sbmt6hfxm" path="res://resources/data/table_drop_restore.tres" id="20_44ycn"]
+
+[sub_resource type="Gradient" id="Gradient_h22py"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_q0xs6"]
+gradient = SubResource("Gradient_h22py")
+width = 16
+
+[sub_resource type="Gradient" id="Gradient_tvucr"]
+colors = PackedColorArray(0, 1, 0, 1, 0, 1, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_27onc"]
+gradient = SubResource("Gradient_tvucr")
+width = 16
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8o0ic"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8d6a6")
+}],
+"loop": true,
+"name": &"move",
+"speed": 5.0
+}]
+
+[node name="EnemyBasicBulldozer" type="Node2D"]
+
+[node name="HealthBarProgressBar" type="TextureProgressBar" parent="."]
+offset_left = -8.0
+offset_top = -46.0
+offset_right = 8.0
+offset_bottom = -44.0
+value = 100.0
+texture_under = SubResource("GradientTexture1D_q0xs6")
+texture_progress = SubResource("GradientTexture1D_27onc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 3.14159
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_8o0ic")
+animation = &"move"
+
+[node name="HurtboxComponent" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("2_cc6cv")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HurtboxComponent"]
+polygon = PackedVector2Array(-28, 15, -38, 4, -40, -2, -37, -9, -34, -17, -26, -24, -28, -35, -23, -38, -12, -33, 0, -40, 15, -33, 27, -37, 28, -20, 37, -8, 40, -2, 38, 4, 28, 16, 23, 16, 18, 10, 13, 15, 13, 27, 5, 32, 2, 42, -2, 43, -6, 31, -12, 28, -12, 13, -17, 10, -23, 15)
+
+[node name="HitboxComponent" type="Area2D" parent="."]
+collision_layer = 0
+script = ExtResource("3_t5621")
+Damage = 0
+DamagePercentage = 25
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitboxComponent"]
+polygon = PackedVector2Array(-28, 15, -38, 4, -40, -2, -37, -9, -34, -17, -26, -24, -28, -35, -23, -38, -12, -33, 0, -40, 15, -33, 27, -37, 28, -20, 37, -8, 40, -2, 38, 4, 28, 16, 23, 16, 18, 10, 13, 15, 13, 27, 5, 32, 2, 42, -2, 43, -6, 31, -12, 28, -12, 13, -17, 10, -23, 15)
+
+[node name="DestroyedMarker" type="Marker2D" parent="."]
+
+[node name="PersistenceComponent" type="Node2D" parent="." node_paths=PackedStringArray("MoveComponent")]
+script = ExtResource("4_2y4q0")
+MoveComponent = NodePath("../MoveComponent")
+PersistenceMilliseconds = 4000
+
+[node name="SpawnerComponent" type="Node2D" parent="." node_paths=PackedStringArray("Location")]
+script = ExtResource("5_ixwpb")
+Location = NodePath("../DestroyedMarker")
+Scene = ExtResource("6_70ymy")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("Actor")]
+script = ExtResource("7_e1dmu")
+Actor = NodePath("..")
+Velocity = Vector2(0, 100)
+
+[node name="RandomMovementComponent" type="Node" parent="." node_paths=PackedStringArray("OwnerNode", "PersistenceComponent", "FlashComponent")]
+script = ExtResource("8_hmcre")
+OwnerNode = NodePath("..")
+PersistenceComponent = NodePath("../PersistenceComponent")
+FlashComponent = NodePath("../FlashComponent")
+TopLeft = Vector2(280, 150)
+BottomRight = Vector2(1000, 250)
+MinSpeed = 200.0
+metadata/_custom_type_script = "uid://d2bgm6d7vt2ps"
+
+[node name="FlashComponent" type="Node" parent="." node_paths=PackedStringArray("_sprite")]
+script = ExtResource("8_jdcii")
+_sprite = NodePath("../AnimatedSprite2D")
+
+[node name="ScaleComponent" type="Node" parent="." node_paths=PackedStringArray("Sprite")]
+script = ExtResource("9_4ogkm")
+Sprite = NodePath("..")
+
+[node name="StatsComponent" type="Node" parent="."]
+script = ExtResource("10_7l8xe")
+MaxHealth = 50
+Health = 50
+
+[node name="ShakeComponent" type="Node" parent="." node_paths=PackedStringArray("TargetNode")]
+script = ExtResource("11_calnl")
+TargetNode = NodePath("../AnimatedSprite2D")
+
+[node name="HurtComponent" type="Node" parent="." node_paths=PackedStringArray("StatsComponent", "HurtboxComponent")]
+script = ExtResource("12_87xll")
+StatsComponent = NodePath("../StatsComponent")
+HurtboxComponent = NodePath("../HurtboxComponent")
+DamageTextPath = "res://enemies/enemy_damage_text/enemy_damage_text.tscn"
+
+[node name="DestroyedComponent" type="Node" parent="." node_paths=PackedStringArray("Actor", "StatsComponent", "DestroyEffectSpawnerComponent")]
+script = ExtResource("13_rk78g")
+Actor = NodePath("..")
+StatsComponent = NodePath("../StatsComponent")
+DestroyEffectSpawnerComponent = NodePath("../SpawnerComponent")
+
+[node name="HealthBarComponent" type="Node" parent="." node_paths=PackedStringArray("StatsComponent", "ScaleComponent", "FlashComponent", "HurtboxComponent", "HealthBar", "AnimatedSprite")]
+script = ExtResource("14_tjndp")
+StatsComponent = NodePath("../StatsComponent")
+ScaleComponent = NodePath("../ScaleComponent")
+FlashComponent = NodePath("../FlashComponent")
+HurtboxComponent = NodePath("../HurtboxComponent")
+HealthBar = NodePath("../HealthBarProgressBar")
+AnimatedSprite = NodePath("../AnimatedSprite2D")
+
+[node name="DespawnOnExitComponent" type="Node" parent="." node_paths=PackedStringArray("_visibleNotifier")]
+script = ExtResource("15_pu463")
+_visibleNotifier = NodePath("../VisibleOnScreenNotifier2D")
+metadata/_custom_type_script = "uid://c0p7rysr544jk"
+
+[node name="DropComponent" type="Node" parent="." node_paths=PackedStringArray("DestroyedComponent")]
+script = ExtResource("16_8rgix")
+DestroyedComponent = NodePath("../DestroyedComponent")
+DropTable = ExtResource("17_8d6a6")
+Type = 2
+metadata/_custom_type_script = "uid://bsn1hx6fcpuet"
+
+[node name="DropOnHitComponent" type="Node" parent="." node_paths=PackedStringArray("HurtboxComponent")]
+script = ExtResource("19_44ycn")
+HurtboxComponent = NodePath("../HurtboxComponent")
+DropTable = ExtResource("20_44ycn")
+Type = 4
+metadata/_custom_type_script = "uid://cocvh8r44cmn4"
+
+[node name="EnemyWeaponComponent" type="Node" parent="." node_paths=PackedStringArray("Muzzle1", "Timer1", "Muzzle2", "Timer2", "Muzzle3", "Timer3")]
+script = ExtResource("18_cew2j")
+Muzzle1 = NodePath("../MuzzleMarker1")
+ProjectileScene1 = ExtResource("19_8d6a6")
+Velocity1 = 650.0
+Timer1 = NodePath("../WeaponTimer1")
+Cooldown1Min = 4.0
+Cooldown1Max = 8.0
+Muzzle2 = NodePath("../MuzzleMarker2")
+ProjectileScene2 = ExtResource("19_jatfw")
+Timer2 = NodePath("../WeaponTimer2")
+Cooldown2Min = 0.5
+Muzzle3 = NodePath("../MuzzleMarker3")
+ProjectileScene3 = ExtResource("19_jatfw")
+Timer3 = NodePath("../WeaponTimer3")
+Cooldown3Min = 0.5
+metadata/_custom_type_script = "uid://birtkwumpwfoo"
+
+[node name="MuzzleMarker1" type="Marker2D" parent="."]
+position = Vector2(0, 36)
+
+[node name="MuzzleMarker2" type="Marker2D" parent="."]
+position = Vector2(-26, 16)
+
+[node name="MuzzleMarker3" type="Marker2D" parent="."]
+position = Vector2(26, 16)
+
+[node name="WeaponTimer1" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="WeaponTimer2" type="Timer" parent="."]
+
+[node name="WeaponTimer3" type="Timer" parent="."]

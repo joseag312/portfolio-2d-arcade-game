@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="WeaponDataComponent" load_steps=2 format=3 uid="uid://he47lwnok5ey"]
+
+[ext_resource type="Script" uid="uid://b6hy4sdhcue5q" path="res://components/WeaponDataComponent.cs" id="1_2xxi0"]
+
+[resource]
+script = ExtResource("1_2xxi0")
+Key = "PPBasicBlue"
+DisplayName = "Basic Laser"
+IconPath = ""
+ProjectilePath = "res://player_projectiles/pp_basic_blue/pp_basic_blue.tscn"
+SpawnLocation = 2
+SlotType = 0
+Type = 1
+DamageModel = 0
+ConditionalSuccess = false
+EmitSuccessSignalName = ""
+UnitPrice = 5
+Speed = 700
+Damage = 1
+DamagePercentage = 0
+CooldownTime = 0.25
+MaxAmount = 0
+Unlocked = true
+CanUpgradeSpeed = true
+CanUpgradeDamage = true
+CanUpgradeDamagePct = false
+CanUpgradeCooldown = true
+CanUpgradeStorage = false
+MaxSpeedUpgrades = 25
+MaxDamageUpgrades = 25
+MaxDamagePctUpgrades = 25
+MaxCooldownUpgrades = 25
+MaxStorageUpgrades = 48
+SpeedUpgradeStep = 15
+DamageUpgradeStep = 1
+DamagePctUpgradeStep = 1
+CooldownUpgradeStep = 0.003
+StorageUpgradeStep = 5
+BaseSpeedPrice = 10
+BaseDamagePrice = 10
+BaseDamagePctPrice = 10
+BaseCooldownPrice = 10
+BaseStoragePrice = 10
+GlobalPriceGrowth = 1.5
+SpeedPriceGrowth = -1.0
+DamagePriceGrowth = -1.0
+DamagePctPriceGrowth = -1.0
+CooldownPriceGrowth = -1.0
+StoragePriceGrowth = 1.22

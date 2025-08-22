@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjuilh3ky2tbn"]
+
+[ext_resource type="Script" uid="uid://cc40jpba77t3g" path="res://hud/hud_currency/HUDCurrency.cs" id="1_mu5ae"]
+[ext_resource type="Texture2D" uid="uid://mvu63u0lkuaj" path="res://assets/gui/o_icon.png" id="2_t37l0"]
+[ext_resource type="Texture2D" uid="uid://bpb7amvnhilvr" path="res://assets/gui/a_icon.png" id="3_ahq7o"]
+
+[node name="HUDCurrency" type="Control" node_paths=PackedStringArray("MewnitsLabel", "PawllarsLabel")]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+script = ExtResource("1_mu5ae")
+MewnitsLabel = NodePath("HBoxContainer/MewnitsValue")
+PawllarsLabel = NodePath("HBoxContainer/PawllarsValue")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -362.0
+offset_top = 15.0
+offset_bottom = 95.0
+grow_horizontal = 0
+alignment = 2
+
+[node name="MewnitsContainer" type="CenterContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="MewnitsIcon" type="TextureRect" parent="HBoxContainer/MewnitsContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = ExtResource("2_t37l0")
+expand_mode = 1
+
+[node name="MewnitsValue" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "103244"
+horizontal_alignment = 1
+
+[node name="m20" type="Control" parent="HBoxContainer"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="PawllarsContainer" type="CenterContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="PawllarsIcon" type="TextureRect" parent="HBoxContainer/PawllarsContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = ExtResource("3_ahq7o")
+expand_mode = 1
+
+[node name="PawllarsValue" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "65135"
+horizontal_alignment = 1
+
+[node name="m35" type="Control" parent="HBoxContainer"]
+custom_minimum_size = Vector2(35, 0)
+layout_mode = 2

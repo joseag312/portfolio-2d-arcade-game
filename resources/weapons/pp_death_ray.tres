@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="WeaponDataComponent" load_steps=2 format=3 uid="uid://c1gqssdm30yxs"]
+
+[ext_resource type="Script" uid="uid://b6hy4sdhcue5q" path="res://components/WeaponDataComponent.cs" id="1_lvqor"]
+
+[resource]
+script = ExtResource("1_lvqor")
+Key = "PPDeathRay"
+DisplayName = "Death Ray"
+IconPath = "res://assets/powerups/death_ray.png"
+ProjectilePath = "res://player_projectiles/pp_death_ray/pp_death_ray.tscn"
+SpawnLocation = 4
+SlotType = 2
+Type = 1
+DamageModel = 0
+ConditionalSuccess = false
+EmitSuccessSignalName = ""
+UnitPrice = 500
+Speed = 0
+Damage = 10
+DamagePercentage = 0
+CooldownTime = 3.0
+MaxAmount = 10
+Unlocked = false
+CanUpgradeSpeed = true
+CanUpgradeDamage = true
+CanUpgradeDamagePct = false
+CanUpgradeCooldown = true
+CanUpgradeStorage = true
+MaxSpeedUpgrades = 25
+MaxDamageUpgrades = 25
+MaxDamagePctUpgrades = 25
+MaxCooldownUpgrades = 25
+MaxStorageUpgrades = 48
+SpeedUpgradeStep = 3
+DamageUpgradeStep = 10
+DamagePctUpgradeStep = 1
+CooldownUpgradeStep = 0.05
+StorageUpgradeStep = 5
+BaseSpeedPrice = 10
+BaseDamagePrice = 10
+BaseDamagePctPrice = 10
+BaseCooldownPrice = 10
+BaseStoragePrice = 10
+GlobalPriceGrowth = 1.5
+SpeedPriceGrowth = -1.0
+DamagePriceGrowth = -1.0
+DamagePctPriceGrowth = -1.0
+CooldownPriceGrowth = -1.0
+StoragePriceGrowth = 1.22

@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="WeaponDataComponent" load_steps=2 format=3 uid="uid://dgaahv5kjqucq"]
+
+[ext_resource type="Script" uid="uid://b6hy4sdhcue5q" path="res://components/WeaponDataComponent.cs" id="1_u72f6"]
+
+[resource]
+script = ExtResource("1_u72f6")
+Key = "PPTeleport"
+DisplayName = "Teleport"
+IconPath = "res://assets/powerups/teleport.png"
+ProjectilePath = "res://player_projectiles/pp_teleport/pp_teleport.tscn"
+SpawnLocation = 4
+SlotType = 2
+Type = 2
+DamageModel = 0
+ConditionalSuccess = true
+EmitSuccessSignalName = "PPTeleportSuccess"
+UnitPrice = 150
+Speed = 0
+Damage = 0
+DamagePercentage = 0
+CooldownTime = 3.0
+MaxAmount = 10
+Unlocked = false
+CanUpgradeSpeed = false
+CanUpgradeDamage = false
+CanUpgradeDamagePct = false
+CanUpgradeCooldown = true
+CanUpgradeStorage = true
+MaxSpeedUpgrades = 25
+MaxDamageUpgrades = 25
+MaxDamagePctUpgrades = 25
+MaxCooldownUpgrades = 25
+MaxStorageUpgrades = 48
+SpeedUpgradeStep = 5
+DamageUpgradeStep = 1
+DamagePctUpgradeStep = 1
+CooldownUpgradeStep = 0.1
+StorageUpgradeStep = 5
+BaseSpeedPrice = 10
+BaseDamagePrice = 10
+BaseDamagePctPrice = 10
+BaseCooldownPrice = 10
+BaseStoragePrice = 10
+GlobalPriceGrowth = 1.5
+SpeedPriceGrowth = -1.0
+DamagePriceGrowth = -1.0
+DamagePctPriceGrowth = -1.0
+CooldownPriceGrowth = -1.0
+StoragePriceGrowth = 1.22

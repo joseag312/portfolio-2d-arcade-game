@@ -1,0 +1,90 @@
+[gd_scene load_steps=12 format=3 uid="uid://w5po6lg1rieg"]
+
+[ext_resource type="PackedScene" uid="uid://bhki8ueevhs0q" path="res://backgrounds/bg_space_final.tscn" id="1_70nd4"]
+[ext_resource type="PackedScene" uid="uid://t3gj82llt5tu" path="res://hud/hud_main/hud_main.tscn" id="2_3hed7"]
+[ext_resource type="Script" uid="uid://c2mcjgtkkniy0" path="res://levels/level_005/Level005Script.cs" id="3_rv0gh"]
+[ext_resource type="Script" uid="uid://b7kt20j1tgm7k" path="res://components/LevelFlowComponent.cs" id="4_rlyud"]
+[ext_resource type="Script" uid="uid://dsrlc8h0hnlgp" path="res://components/SpawnerRecurrentComponent.cs" id="5_n0asx"]
+[ext_resource type="Script" uid="uid://7bpd0oehmqnw" path="res://components/SpawnerWaveComponent.cs" id="6_1mj7q"]
+[ext_resource type="Script" uid="uid://15c5bbm4dl76" path="res://components/SpawnerComponent.cs" id="7_1d1wb"]
+[ext_resource type="PackedScene" uid="uid://bcla0tq71aoqp" path="res://enemies/enemy_human_kamikaze/enemy_human_kamikaze.tscn" id="8_k3phr"]
+[ext_resource type="PackedScene" uid="uid://d06amkctf744r" path="res://enemies/enemy_human_aimer/enemy_human_aimer.tscn" id="9_f4cge"]
+[ext_resource type="PackedScene" uid="uid://c5xf8n0lytpa3" path="res://enemies/enemy_human_bulldozer/enemy_human_bulldozer.tscn" id="10_keoea"]
+[ext_resource type="PackedScene" uid="uid://cm2ehypi27656" path="res://player_ship/ship.tscn" id="11_ntgyv"]
+
+[node name="Level005" type="Node2D"]
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("1_70nd4")]
+
+[node name="HUDMain" parent="." instance=ExtResource("2_3hed7")]
+
+[node name="Level005Script" type="Node" parent="." node_paths=PackedStringArray("Ship", "LevelFlowComponent", "Enemy1Spawner", "Enemy2Spawner", "Enemy3Spawner", "HUD")]
+script = ExtResource("3_rv0gh")
+Ship = NodePath("../ShipContainer/Ship")
+LevelFlowComponent = NodePath("../LevelFlowComponent")
+Enemy1Spawner = NodePath("../LevelFlowComponent/Spawners/EnemyHumanBulldozer")
+Enemy2Spawner = NodePath("../LevelFlowComponent/Spawners/EnemyHumanAimer")
+Enemy3Spawner = NodePath("../LevelFlowComponent/Spawners/EnemyHumanKamikaze")
+HUD = NodePath("../HUDMain")
+LevelMultiplier = 4
+CurrencyMultiplier = 2.5
+
+[node name="LevelFlowComponent" type="Node" parent="." node_paths=PackedStringArray("Ship", "HUD", "ParallaxBackground", "EffectContainer", "DropContainer", "ProjectileContainer", "EnemyContainer", "SpawnerRecurrent", "SpawnerWave")]
+script = ExtResource("4_rlyud")
+Ship = NodePath("../ShipContainer/Ship")
+HUD = NodePath("../HUDMain")
+ParallaxBackground = NodePath("../ParallaxBackground")
+EffectContainer = NodePath("../EffectContainer")
+DropContainer = NodePath("../DropContainer")
+ProjectileContainer = NodePath("../ProjectileContainer")
+EnemyContainer = NodePath("../EnemyContainer")
+SpawnerRecurrent = NodePath("SpawnerRecurrentComponent")
+SpawnerWave = NodePath("SpawnerWaveComponent")
+metadata/_custom_type_script = "uid://b7kt20j1tgm7k"
+
+[node name="SpawnerRecurrentComponent" type="Node" parent="LevelFlowComponent" node_paths=PackedStringArray("EnemyContainer", "DropContainer", "EffectContainer", "ProjectileContainer", "Ship")]
+script = ExtResource("5_n0asx")
+EnemyContainer = NodePath("../../EnemyContainer")
+DropContainer = NodePath("../../DropContainer")
+EffectContainer = NodePath("../../EffectContainer")
+ProjectileContainer = NodePath("../../ProjectileContainer")
+Ship = NodePath("../../ShipContainer/Ship")
+metadata/_custom_type_script = "uid://dsrlc8h0hnlgp"
+
+[node name="SpawnerWaveComponent" type="Node" parent="LevelFlowComponent" node_paths=PackedStringArray("EnemyContainer", "DropContainer", "EffectContainer", "ProjectileContainer", "Ship")]
+script = ExtResource("6_1mj7q")
+EnemyContainer = NodePath("../../EnemyContainer")
+DropContainer = NodePath("../../DropContainer")
+EffectContainer = NodePath("../../EffectContainer")
+ProjectileContainer = NodePath("../../ProjectileContainer")
+Ship = NodePath("../../ShipContainer/Ship")
+metadata/_custom_type_script = "uid://7bpd0oehmqnw"
+
+[node name="Spawners" type="Node" parent="LevelFlowComponent"]
+
+[node name="EnemyHumanBulldozer" type="Node2D" parent="LevelFlowComponent/Spawners"]
+script = ExtResource("7_1d1wb")
+Scene = ExtResource("10_keoea")
+
+[node name="EnemyHumanAimer" type="Node2D" parent="LevelFlowComponent/Spawners"]
+script = ExtResource("7_1d1wb")
+Scene = ExtResource("9_f4cge")
+
+[node name="EnemyHumanKamikaze" type="Node2D" parent="LevelFlowComponent/Spawners"]
+script = ExtResource("7_1d1wb")
+Scene = ExtResource("8_k3phr")
+metadata/_custom_type_script = "uid://15c5bbm4dl76"
+
+[node name="ShipContainer" type="Node2D" parent="."]
+
+[node name="Ship" parent="ShipContainer" node_paths=PackedStringArray("ProjectileContainer") instance=ExtResource("11_ntgyv")]
+position = Vector2(654, 824)
+ProjectileContainer = NodePath("../../ProjectileContainer")
+
+[node name="EnemyContainer" type="Node2D" parent="."]
+
+[node name="DropContainer" type="Node2D" parent="."]
+
+[node name="ProjectileContainer" type="Node2D" parent="."]
+
+[node name="EffectContainer" type="Node2D" parent="."]

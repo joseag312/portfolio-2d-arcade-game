@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3 uid="uid://b8kjheqlrm40x"]
+
+[ext_resource type="Texture2D" uid="uid://cfya6iw21qap2" path="res://assets/enemy_projectiles/ep_pink_ring.png" id="1_amyie"]
+[ext_resource type="Script" uid="uid://c4o8660pjq6yc" path="res://components/HitboxComponent.cs" id="2_vps5h"]
+[ext_resource type="Script" uid="uid://bngbbdfy7uu7s" path="res://components/MoveComponent.cs" id="3_fpf42"]
+[ext_resource type="Script" uid="uid://c64tqnyvh68h6" path="res://components/WeaponSpawnComponent.cs" id="4_m2rwp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23ak7"]
+atlas = ExtResource("1_amyie")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cv4fd"]
+atlas = ExtResource("1_amyie")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mef2y"]
+atlas = ExtResource("1_amyie")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbuxl"]
+atlas = ExtResource("1_amyie")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8rgu6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23ak7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cv4fd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mef2y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jbuxl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vg8pf"]
+radius = 4.0
+
+[node name="EPPlasmaBasic" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8rgu6")
+autoplay = "default"
+frame_progress = 0.179939
+
+[node name="HitboxComponent" type="Area2D" parent="."]
+collision_layer = 0
+script = ExtResource("2_vps5h")
+Damage = 2
+metadata/_custom_type_script = "uid://c4o8660pjq6yc"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+shape = SubResource("CircleShape2D_vg8pf")
+
+[node name="MoveComponent" type="Node" parent="."]
+script = ExtResource("3_fpf42")
+metadata/_custom_type_script = "uid://bngbbdfy7uu7s"
+
+[node name="WeaponSpawnComponent" type="Node" parent="." node_paths=PackedStringArray("_hitboxComponent")]
+script = ExtResource("4_m2rwp")
+_hitboxComponent = NodePath("../HitboxComponent")
+_isEnemyWeapon = true
+metadata/_custom_type_script = "uid://c64tqnyvh68h6"

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="LevelDataResource" load_steps=5 format=3 uid="uid://ylmjn8fcvy18"]
+
+[ext_resource type="Script" uid="uid://b03ol7t5nlv8i" path="res://menus/menu_levels/LevelDataResource.cs" id="1_fwrit"]
+[ext_resource type="Texture2D" uid="uid://mabeww6pjhiy" path="res://assets/enemy/enemy_human_kamikaze.png" id="1_xwdkh"]
+[ext_resource type="Texture2D" uid="uid://cm3sx2vtm67v4" path="res://assets/enemy/enemy_human_basic.png" id="2_ndxtd"]
+[ext_resource type="Texture2D" uid="uid://gmvy5goxi764" path="res://assets/powerups/missile.png" id="3_ndxtd"]
+
+[resource]
+script = ExtResource("1_fwrit")
+Key = "L1"
+DisplayName = "Intro"
+ScenePath = "res://levels/level_001/level_001.tscn"
+EnemySprites = [ExtResource("2_ndxtd"), ExtResource("1_xwdkh"), null]
+RecommendedPowerups = [ExtResource("3_ndxtd"), null]
+metadata/_custom_type_script = "uid://b03ol7t5nlv8i"
