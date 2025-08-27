@@ -26,10 +26,10 @@ public partial class MenuStore : Control
         WireCards();
         WireButtons();
 
-        // if (!G.GS.IsDialogSeen("ArmoryIntro"))
-        // {
-        _ = ArmoryIntroDialog();
-        //}
+        if (!G.GS.IsDialogSeen("ArmoryIntro"))
+        {
+            _ = ArmoryIntroDialog();
+        }
     }
 
     private void WireGrid()
