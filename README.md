@@ -13,17 +13,19 @@ Arcade-style space shooter with RPG elements where players:
 
 ---
 
-## ✨ Portfolio Focus
+## Portfolio Focus
 
 This project was designed as a **demonstration of software engineering practices** applied to game development.
 
-### 🎯 SOLID & Design Patterns
+### SOLID
 
 - **SRP**: Components handle one responsibility (movement, health, drops).
 - **OCP**: New weapons/enemies added without modifying existing code.
 - **LSP**: Enemy/weapon variants swap seamlessly with base types.
 - **ISP**: Systems expose only needed methods via clear contracts.
 - **DIP**: Gameplay depends on abstractions, not concrete classes.
+
+### Design Patterns
 
 - **Component-Based Design**: Enemies, drops, HUD and menus built following **Entity–Component** pattern.
 - **Autoload Singletons**: Global state and services handled using **Singleton** patterns.
@@ -34,13 +36,13 @@ This project was designed as a **demonstration of software engineering practices
 - **Input & AI Movement**: **Strategy pattern** for enemy movement vs player movement.
 - **Level Flow Management**: Levels shift cleanly between states, inspired by the **State pattern**.
 
-### 💾 Data Persistence
+### Data Persistence
 
 - **Save/Load Systems**: Weapon inventory, progression, and settings are serialized.
 - **Schema Versioning**: Save data includes schema version checks.
 - **Catalog-Driven Data**: Weapons and levels defined as resources for **data-driven design**.
 
-### 🧰 Systems Engineering
+### Systems Engineering
 
 - **Weapon System**: Runtime model manages cooldowns, upgrades, and overrides.
 - **Economy & Store**: Balanced currency system integrated into persistence.
@@ -80,7 +82,7 @@ This project was designed as a **demonstration of software engineering practices
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Engine**: Godot 4 (C#)
 - **Language**: C# with Godot API
@@ -88,7 +90,7 @@ This project was designed as a **demonstration of software engineering practices
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
 ### 🎮 Gameplay
 
