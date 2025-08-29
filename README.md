@@ -19,11 +19,11 @@ This project was designed as a **demonstration of software engineering practices
 
 ### SOLID
 
-- **SRP**: Components handle one responsibility (movement, health, drops).
-- **OCP**: New weapons/enemies added without modifying existing code.
-- **LSP**: Enemy/weapon variants swap seamlessly with base types.
-- **ISP**: Systems expose only needed methods via clear contracts.
-- **DIP**: Gameplay depends on abstractions, not concrete classes.
+- **Single Responsibility Principle**: Components handle one responsibility (movement, health, drops).
+- **Open/Closed Principle**: New weapons/enemies added without modifying existing code.
+- **Liskov Substitution Principle**: Enemy/weapon variants swap seamlessly with base types.
+- **Interface Segregation Principle**: Systems expose only needed methods via clear contracts.
+- **Dependency Inversion Principle**: Gameplay depends on abstractions, not concrete classes.
 
 ### Design Patterns
 
@@ -87,6 +87,14 @@ This project was designed as a **demonstration of software engineering practices
 - **Engine**: Godot 4 (C#)
 - **Language**: C# with Godot API
 - **Tools**: Git, React (portfolio site)
+
+---
+
+## Get Started
+
+- Download [Godot Engine 4](https://godotengine.org)
+- Clone the GitHub Repo
+- Open the `project.godot` file with Godot
 
 ---
 
