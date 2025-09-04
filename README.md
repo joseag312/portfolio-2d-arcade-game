@@ -1,4 +1,4 @@
-# 🚀 [2D Space Shooter](https://github.com/joseag312/portfolio-2d-arcade-game)
+# [2D Space Shooter](https://github.com/joseag312/portfolio-2d-arcade-game)
 
 👾 **2D space shooter game built with Godot Engine**
 
